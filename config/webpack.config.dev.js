@@ -1,5 +1,3 @@
-'use strict';
-
 const autoprefixer = require('autoprefixer');
 const path = require('path');
 const webpack = require('webpack');
@@ -157,7 +155,7 @@ module.exports = {
           // In production, we use a plugin to extract that CSS to a file, but
           // in development "style" loader enables hot editing of CSS.
           {
-            test: /\.css$/,
+            test: /\.styl$/,
             use: [
               require.resolve('style-loader'),
               {
@@ -172,6 +170,7 @@ module.exports = {
                   // Necessary for external CSS imports to work
                   // https://github.com/facebookincubator/create-react-app/issues/2677
                   ident: 'postcss',
+                  sourceMap: true,
                   plugins: () => [
                     require('postcss-flexbugs-fixes'),
                     autoprefixer({
@@ -186,6 +185,9 @@ module.exports = {
                   ],
                 },
               },
+              {
+                loader: require.resolve('stylus-loader')
+              }
             ],
           },
           // "file" loader makes sure those assets get served by WebpackDevServer.
