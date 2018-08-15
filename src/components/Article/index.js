@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import gh from '../../interfaces/github'
-import Markdown from 'markdown'
+// import Markdown from 'markdown'
 
 export default class Article extends Component {
   state = {
@@ -16,11 +16,11 @@ export default class Article extends Component {
   }
 
   async componentDidMount () {
-    const toHtml = Markdown.markdown.toHTML
-    const art = gh.getIssues('coderming', 'blog')
+    // const toHtml = Markdown.markdown.toHTML
+    const art = gh.getIssues('facebook', 'react')
 
     let issues = (await art.listIssues())
-
+    console.log(issues)
     let issueData = await art.listIssueComments(issues.data[1].number)
 
     console.log(issueData)
