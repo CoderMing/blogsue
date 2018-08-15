@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import gh from '../../interfaces/github'
+import { gh } from '../../interfaces/github'
 // import Markdown from 'markdown'
 
 export default class Article extends Component {
