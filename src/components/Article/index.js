@@ -23,9 +23,10 @@ export default class Article extends Component {
 
     let issueData = await art.listIssueComments(issues.data[1].number)
 
-    this.setState({
-      data: toHtml(issueData.data.find(el => el.number === 4).body)
-    })
+    console.log(issueData)
+  //   this.setState({
+  //     data: toHtml(issueData.data.find(el => el.number === 4).body)
+  //   })
   }
 
 }

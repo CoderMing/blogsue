@@ -9,11 +9,10 @@ const gitalk = new Gitalk(_config.gitalk)
 export default class Discussion extends Component {
   render () {
     return (
-      <section id='gitalk-container'></section>
+      <section 
+        id='gitalk-container'
+        ref={el => gitalk.render(el)}></section>
     )
   }
-
-  componentDidMount () {
-    gitalk.render('gitalk-container')
-  }
+  
 }
