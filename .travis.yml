@@ -1,0 +1,5 @@
+language: node_js
+nodejs:
+  - "10"
+  - "9"
+  - "8"
