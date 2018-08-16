@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { gh } from '../../interfaces/github'
+import { listIssues } from '../../interfaces/github'
 // import Markdown from 'markdown'
 
 export default class Article extends Component {
@@ -17,13 +17,15 @@ export default class Article extends Component {
 
   async componentDidMount () {
     // const toHtml = Markdown.markdown.toHTML
-    const art = gh.getIssues('facebook', 'react')
 
-    let issues = (await art.listIssues())
+    let issues = (await listIssues({
+      page: 1
+    }))
     console.log(issues)
-    let issueData = await art.listIssueComments(issues.data[1].number)
 
-    console.log(issueData)
+    // let issueData = await art.listIssueComments(issues.data[1].number)
+
+    // console.log(issueData)
   //   this.setState({
   //     data: toHtml(issueData.data.find(el => el.number === 4).body)
   //   })
