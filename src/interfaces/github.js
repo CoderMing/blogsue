@@ -8,7 +8,6 @@ export const gh = new Github(_config.github.initConf)
 
 export const listIssues = async conf => {
   let res = await axios.get(`${baseApi}/issues`, conf)
-  console.log(res)
   
   return res
 }

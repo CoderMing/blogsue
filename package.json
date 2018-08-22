@@ -44,6 +44,8 @@
     "react-dom": "^16.4.2",
     "react-redux": "^5.0.7",
     "react-router": "^4.3.1",
+    "react-router-redux": "^4.0.8",
+    "redux": "^4.0.0",
     "resolve": "1.6.0",
     "style-loader": "0.19.0",
     "stylus": "^0.54.5",
@@ -103,6 +105,7 @@
   "devDependencies": {
     "@commitlint/cli": "^7.0.0",
     "@commitlint/config-conventional": "^7.0.1",
-    "husky": "^0.14.3"
+    "husky": "^0.14.3",
+    "redux-logger": "^3.0.6"
   }
 }
