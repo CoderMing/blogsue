@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { listIssues } from '../../interfaces/github'
+import { listIssues } from '../utils/github'
 // import Markdown from 'markdown'
 
 export default class Article extends Component {
@@ -22,13 +22,6 @@ export default class Article extends Component {
       page: 1
     }))
     console.log(issues)
-
-    // let issueData = await art.listIssueComments(issues.data[1].number)
-
-    // console.log(issueData)
-  //   this.setState({
-  //     data: toHtml(issueData.data.find(el => el.number === 4).body)
-  //   })
   }
 
 }

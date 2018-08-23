@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import Gitalk from './containers/Gitalk'
+import Gitalk from './components/Gitalk'
 import Article from './components/Article'
 
 import './styles/app.styl';
