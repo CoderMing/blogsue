@@ -5,8 +5,8 @@ import Gitalk from '../components/Gitalk'
 import Article from '../components/Article'
 
 export default (
-  <Router path="/" component='App'>
-    <Route path='/article/:id' component={Article}></Route>
-    <Route component={Gitalk}></Route>
+  <Router path="/" component="App">
+    <Route path="/article/:id" component={Article} />
+    <Route component={Gitalk} />
   </Router>
 )

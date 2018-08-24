@@ -7,21 +7,20 @@ export default class Article extends Component {
     data: '123'
   }
 
-  render () {
+  render() {
     return (
       <div>
-        <section></section>
+        <section />
       </div>
     )
   }
 
-  async componentDidMount () {
+  async componentDidMount() {
     // const toHtml = Markdown.markdown.toHTML
 
-    let issues = (await listIssues({
+    let issues = await listIssues({
       page: 1
-    }))
+    })
     console.log(issues)
   }
-
 }
