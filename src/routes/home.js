@@ -1,16 +1,16 @@
 import React from 'react'
 
 import Header from '../features/nav'
-import Gitalk from '../features/gitalk/Gitalk'
-import SectionLeft from '../features/sectionLeft'
-import SectionRight from '../features/sectionRight'
+import SectionLeft from '../components/sectionLeft'
+import SectionRight from '../components/sectionRight'
+import MainLayout from '../components/MainLayout'
 
 export default () => (
   <div>
     <Header />
-    <div id="content">
-      <SectionLeft />
-      <SectionRight />
-    </div>
+    <MainLayout>
+      <div>123213</div>
+      <div>890</div>
+    </MainLayout>
   </div>
 )

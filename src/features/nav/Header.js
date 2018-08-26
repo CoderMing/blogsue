@@ -12,8 +12,11 @@ export default class Discussion extends Component {
           <Navbar.Group align="left" className="nav-content">
             <Navbar.Heading>{_config.title}</Navbar.Heading>
             <Navbar.Divider />
-            <Link to="/">
+            <Link to="/home">
               <Button className="bp3-minimal" icon="home" text="Home" />
+            </Link>
+            <Link to="/article">
+              <Button className="bp3-minimal" icon="document" text="Files" />
             </Link>
             <Link to="/about">
               <Button className="bp3-minimal" icon="document" text="Files" />

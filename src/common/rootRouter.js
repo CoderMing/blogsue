@@ -12,7 +12,9 @@ import './global.styl'
 export default () => (
   <Router>
     <div>
-      <Route path="/13123" component={homeRoute} />
+      <Route exact path="/" component={homeRoute} />
+      <Route path="/article/:id" component={homeRoute} />
+      <Route path="/home" component={homeRoute} />
     </div>
   </Router>
 )
