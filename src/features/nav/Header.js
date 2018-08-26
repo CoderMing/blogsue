@@ -4,7 +4,7 @@ import { Navbar, Button } from '@blueprintjs/core'
 
 import _config from '../../config'
 
-export default class Discussion extends Component {
+export default class extends Component {
   render() {
     return (
       <Navbar className="bp3-dark">

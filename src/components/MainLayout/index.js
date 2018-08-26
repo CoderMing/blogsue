@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 import './mainLayout.styl'
 
-export default class SectionLeft extends Component {
+export default class extends Component {
   render() {
     return (
       <div id="content">

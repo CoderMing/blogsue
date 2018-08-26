@@ -1,16 +1,15 @@
 import React from 'react'
 
-import Header from '../features/nav'
-import SectionLeft from '../components/sectionLeft'
-import SectionRight from '../components/sectionRight'
+import Nav from '../features/Nav'
+import SectionItem from '../components/SectionItem'
 import MainLayout from '../components/MainLayout'
 
 export default () => (
   <div>
-    <Header />
+    <Nav />
     <MainLayout>
-      <div>123213</div>
-      <div>890</div>
+      <SectionItem>123213</SectionItem>
+      <SectionItem>890</SectionItem>
     </MainLayout>
   </div>
 )
