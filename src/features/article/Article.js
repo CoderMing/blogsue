@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { listIssues } from '../utils/github'
+import { listIssues } from '../../utils/github'
 // import Markdown from 'markdown'
 
 export default class Article extends Component {

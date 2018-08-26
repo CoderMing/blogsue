@@ -2,7 +2,7 @@ import React from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 import Gitalk from '../components/Gitalk'
-import Article from '../components/Article'
+import Article from '../features/article/Article'
 
 export default (
   <Router path="/" component="App">
