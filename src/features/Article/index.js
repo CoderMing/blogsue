@@ -20,10 +20,10 @@ export default class extends Component {
             <p className="info" if={user}>
               作者：
               <a href={user.html_url}>{user.login}</a>
-              <span class="blank" />
+              <span className="padding-line" />
               创建时间：
               {createTime.format('YYYY-MM-DD')}
-              <span class="blank" />
+              <span className="padding-line" />
               讨论次数：
               {comments}
             </p>
