@@ -1,18 +1,46 @@
 import React, { Component } from 'react'
-import { listIssues, getIssue } from '../../utils/github'
+import { getIssue } from '../../utils/github'
+import Markdown from 'react-markdown'
+import { Icon, Button } from '@blueprintjs/core'
+import dayjs from 'dayjs'
+
+import './article.styl'
 
 export default class extends Component {
   state = {
-    inner: 'hello!'
+    issueData: {}
   }
   render() {
-    return <div>{this.state.inner}</div>
+    const { body, title, user, comments, createTime } = this.state.issueData
+    return (
+      <div className="article-container">
+        <div className="con-info">
+          <h1 className="title">{title}</h1>
+          {user && (
+            <p className="info" if={user}>
+              作者：
+              <a href={user.html_url}>{user.login}</a>
+              <span class="blank" />
+              创建时间：
+              {createTime.format('YYYY-MM-DD')}
+              <span class="blank" />
+              讨论次数：
+              {comments}
+            </p>
+          )}
+        </div>
+        <Markdown className="markdown-body" source={body} />
+      </div>
+    )
   }
   componentWillMount() {
     getIssue(this.props.id).then(res => {
-      console.log(res)
       this.setState({
-        inner: res.data.body
+        issueData: {
+          ...res.data,
+          createTime: dayjs(res.data.created_at),
+          updateTime: dayjs(res.data.updated_at)
+        }
       })
     })
   }

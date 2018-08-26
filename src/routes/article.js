@@ -4,6 +4,8 @@ import Nav from '../features/Nav'
 import SectionItem from '../components/SectionItem'
 import MainLayout from '../components/MainLayout'
 import Article from '../features/Article'
+import Gitalk from '../components/Gitalk'
+
 export default class extends React.Component {
   render() {
     const issueId = this.props.match.params.id
@@ -13,6 +15,7 @@ export default class extends React.Component {
         <MainLayout>
           <SectionItem>
             <Article id={issueId} />
+            <Gitalk id={issueId} />
           </SectionItem>
           <div>
             <SectionItem>890</SectionItem>

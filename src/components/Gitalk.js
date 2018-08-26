@@ -4,14 +4,17 @@ import _config from '../config'
 
 import 'gitalk/dist/gitalk.css'
 
-const gitalk = new Gitalk(_config.gitalk)
-
 export default class extends Component {
   render() {
     return <section id="gitalk-container" />
   }
 
   componentDidMount() {
+    const gitalk = new Gitalk({
+      number: +this.props.id,
+      ..._config.gitalk
+    })
+
     gitalk.render('gitalk-container')
   }
 }
