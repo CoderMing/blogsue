@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
-import { bindActionCreators } from 'redux'
-import { connect } from 'react-redux'
 
-class Count extends Component {
+export default class Count extends Component {
   render() {
     const { count, plusOne } = this.props
     return (
@@ -12,21 +10,3 @@ class Count extends Component {
     )
   }
 }
-
-function plusOne() {
-  return { type: 'PLUS' }
-}
-
-function mapStateToProps(state) {
-  return {
-    count: state.plus.count
-  }
-}
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ plusOne }, dispatch)
-}
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Count)
