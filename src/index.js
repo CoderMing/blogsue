@@ -5,7 +5,6 @@ import registerServiceWorker from './common/registerServiceWorker'
 import configureStore from './common/configureStore'
 import reducer from './reducers/index'
 import App from './App.jsx'
-import RootRouter from './common/rootRouter'
 
 const store = configureStore(reducer)
 

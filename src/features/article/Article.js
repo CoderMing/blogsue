@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { listIssues } from '../../utils/github'
-// import Markdown from 'markdown'
 
 export default class Article extends Component {
   state = {
@@ -17,8 +16,6 @@ export default class Article extends Component {
   }
 
   async componentDidMount() {
-    // const toHtml = Markdown.markdown.toHTML
-
     let issues = await listIssues({
       page: 1
     })

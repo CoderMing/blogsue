@@ -6,7 +6,7 @@ import 'gitalk/dist/gitalk.css'
 
 const gitalk = new Gitalk(_config.gitalk)
 
-export default class Discussion extends Component {
+export default class extends Component {
   render() {
     return <section id="gitalk-container" ref={el => gitalk.render(el)} />
   }
