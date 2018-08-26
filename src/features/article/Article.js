@@ -11,6 +11,7 @@ export default class Article extends Component {
     return (
       <div>
         <section />
+        12312312
       </div>
     )
   }
