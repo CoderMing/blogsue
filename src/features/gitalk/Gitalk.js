@@ -8,6 +8,10 @@ const gitalk = new Gitalk(_config.gitalk)
 
 export default class extends Component {
   render() {
-    return <section id="gitalk-container" ref={el => gitalk.render(el)} />
+    return <section id="gitalk-container" />
+  }
+
+  componentDidMount() {
+    gitalk.render('gitalk-container')
   }
 }

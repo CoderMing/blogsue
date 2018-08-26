@@ -1,18 +1,31 @@
 import React, { Component } from 'react'
-import { Switch, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import { Navbar, Button } from '@blueprintjs/core'
+
+import _config from '../../config'
+
 export default class Discussion extends Component {
   render() {
     return (
-      <header id="header">
-        <ul>
-          <Link to="/1" />
-          <Link to="/2" />
-          <Link to="/3" />
-          <Link to="/4" />
-          <Link to="/5" />
-          <Switch />
-        </ul>
-      </header>
+      <Navbar className="bp3-dark">
+        <div id="nav-content">
+          <Navbar.Group align="left" className="nav-content">
+            <Navbar.Heading>{_config.title}</Navbar.Heading>
+            <Navbar.Divider />
+            <Link to="/">
+              <Button className="bp3-minimal" icon="home" text="Home" />
+            </Link>
+            <Link to="/about">
+              <Button className="bp3-minimal" icon="document" text="Files" />
+            </Link>
+          </Navbar.Group>
+          <Navbar.Group align="right" className="nav-content">
+            <Navbar.Heading>
+              <span>{_config.description}</span>
+            </Navbar.Heading>
+          </Navbar.Group>
+        </div>
+      </Navbar>
     )
   }
 }
