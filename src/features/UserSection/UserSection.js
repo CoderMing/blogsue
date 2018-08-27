@@ -18,16 +18,18 @@ export default class extends Component {
     const { description } = _config
     return (
       <SectionItem>
-        {avatar_url && (
+        {name && (
           <div className="user-sec-container">
             <img className="user-avator" alt="avator" src={avatar_url} />
             <h2 className="user-name">{name}</h2>
             <p className="user-desc">{description}</p>
-            <hr />
             <Button
               icon={isDark ? 'flash' : 'moon'}
               className="bp3-fill"
-              onClick={this.props.changePageColor}>
+              onClick={this.props.changePageColor.bind(
+                this,
+                !_config.pageConfApi.get().colorMode
+              )}>
               {isDark ? '日间' : '夜间'}
               模式
             </Button>
@@ -38,6 +40,8 @@ export default class extends Component {
   }
 
   async componentWillMount() {
+    console.log(_config.pageConfApi.get().colorMode)
+    this.props.changePageColor(_config.pageConfApi.get().colorMode)
     let userInfo = (await getUser(_config.articleRepo.user)).data
     this.setState({
       userInfo

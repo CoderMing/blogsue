@@ -9,7 +9,7 @@ export default (state = initialState, action) => {
     case CHANGE_PAGE_COLOR:
       return {
         ...state,
-        isDark: !state.isDark
+        isDark: action.colorMode
       }
 
     default:

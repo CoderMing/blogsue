@@ -18,9 +18,9 @@ export default class extends Component {
       <SectionItem>
         <div className="link-sec">
           <h3>{linkSection.title}</h3>
-          {linkSection.linkList.map(el => {
+          {linkSection.linkList.map((el, index) => {
             return (
-              <div className="link-sec-item">
+              <div className="link-sec-item" key={index}>
                 <Icon icon="link" />
                 <a target="_blank" href={el.href}>
                   {el.name}
