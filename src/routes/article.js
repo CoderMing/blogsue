@@ -21,7 +21,7 @@ export default class extends React.Component {
           </SectionItem>
           <div>
             <UserSection />
-            <LinkSection>890</LinkSection>
+            <LinkSection />
           </div>
         </MainLayout>
       </div>

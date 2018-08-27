@@ -6,7 +6,7 @@ import { connect } from 'react-redux'
 // import Article from '../features/article/Article'
 // import { Button } from '@blueprintjs/core'
 import homeRoute from '../routes/home'
-import article from '../routes/article'
+import articleRoute from '../routes/article'
 
 import './global.styl'
 
@@ -22,8 +22,8 @@ export default connect(state => {
         <Router>
           <div className={isDark ? 'bp3-dark' : ''} id="content-root">
             <Route exact path="/" component={homeRoute} />
-            <Route path="/article/:id" component={article} />
-            <Route path="/home" component={homeRoute} />
+            <Route path="/post/:page" component={homeRoute} />
+            <Route path="/article/:id" component={articleRoute} />
           </div>
         </Router>
       )

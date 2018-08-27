@@ -1,17 +1,30 @@
 import React, { Component } from 'react'
-import { getIssue } from '../../utils/github'
-import Markdown from 'react-markdown'
-import dayjs from 'dayjs'
+import { listIssues } from '../../utils/github'
+// import Markdown from 'react-markdown'
+// import dayjs from 'dayjs'
 
 import './post.styl'
 
 export default class extends Component {
   state = {
-    issueData: {}
+    issueList: {}
   }
   render() {
-    const { body, title, user, createTime } = this.state.issueData
-    return <div className="article-container">12312312</div>
+    const { issueList } = this.state
+    return (
+      <div className="article-container">
+        {issueList.length &&
+          issueList.map((el, index) => (
+            <div className="post-item">
+              <h3>{el.title}</h3>
+            </div>
+          ))}
+      </div>
+    )
   }
-  componentWillMount() {}
+  async componentWillMount() {
+    this.setState({
+      issueList: (await listIssues({ page: this.props.page })).data
+    })
+  }
 }

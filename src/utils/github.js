@@ -18,8 +18,7 @@ export const gh = new Github()
 
 export const listIssues = async conf => {
   return await axios.get(`${repoBaseApi}/issues`, {
-    ...conf,
-    params
+    params: { ...params, ...conf }
   })
 }
 
