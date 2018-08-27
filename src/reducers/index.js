@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux' // 利用combineReducers 合并reducers
+import userReducer from './user'
 
 const initialState = { count: 0 }
 
@@ -13,5 +14,6 @@ function plus(state = initialState, action) {
 
 export default combineReducers({
   plus,
+  user: userReducer,
   sample: (store = {}) => store
 })

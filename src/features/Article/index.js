@@ -24,8 +24,12 @@ export default class extends Component {
               创建时间：
               {createTime.format('YYYY-MM-DD')}
               <span className="padding-line" />
-              讨论次数：
-              {comments}
+              字数统计：
+              {body.replace(/[*`-]|\(.*?\)/g, '').length}
+              <span className="padding-line" />
+              预计阅读需要
+              {Math.round(body.replace(/[*`-]|\(.*?\)/g, '').length / 500)}
+              分钟
             </p>
           )}
         </div>

@@ -2,20 +2,20 @@ import Github from 'github-api'
 import axios from 'axios'
 import _config from '../config'
 
-const baseApi = `https://api.github.com/repos/${_config.articleRepo.user}/${
+const repoBaseApi = `https://api.github.com/repos/${_config.articleRepo.user}/${
   _config.articleRepo.repo
 }`
-
+// gh 为通用的工具，仅供拓展。一般情况下勿使用
 export const gh = new Github(_config.github.initConf)
 
 export const listIssues = async conf => {
-  let res = await axios.get(`${baseApi}/issues`, conf)
-
-  return res
+  return await axios.get(`${repoBaseApi}/issues`, conf)
 }
 
 export const getIssue = async num => {
-  let res = await axios.get(`${baseApi}/issues/${num}`)
+  return await axios.get(`${repoBaseApi}/issues/${num}`)
+}
 
-  return res
+export const getUser = async id => {
+  return await axios.get(`https://api.github.com/users/${id}`)
 }

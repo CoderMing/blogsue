@@ -5,6 +5,7 @@ import SectionItem from '../components/SectionItem'
 import MainLayout from '../components/MainLayout'
 import Article from '../features/Article'
 import Gitalk from '../components/Gitalk'
+import UserSection from '../features/UserSection'
 
 export default class extends React.Component {
   render() {
@@ -18,7 +19,7 @@ export default class extends React.Component {
             <Gitalk id={issueId} />
           </SectionItem>
           <div>
-            <SectionItem>890</SectionItem>
+            <UserSection />
             <SectionItem>890</SectionItem>
           </div>
         </MainLayout>
