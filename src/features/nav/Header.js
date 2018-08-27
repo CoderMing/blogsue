@@ -8,7 +8,7 @@ export default class extends Component {
   render() {
     return (
       <div id="header-container">
-        <Navbar className="bp3-dark">
+        <Navbar>
           <div id="nav-content">
             <Navbar.Group align="left" className="nav-content">
               <Navbar.Heading>{_config.title}</Navbar.Heading>

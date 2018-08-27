@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { getIssue } from '../../utils/github'
 import Markdown from 'react-markdown'
-import { Icon, Button } from '@blueprintjs/core'
 import dayjs from 'dayjs'
 
 import './article.styl'
@@ -11,7 +10,7 @@ export default class extends Component {
     issueData: {}
   }
   render() {
-    const { body, title, user, comments, createTime } = this.state.issueData
+    const { body, title, user, createTime } = this.state.issueData
     return (
       <div className="article-container">
         <div className="con-info">

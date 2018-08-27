@@ -8,10 +8,11 @@
   padding 0
   font-family: -apple-system, "BlinkMacSystemFont", "Segoe UI", "Arial", sans-serif;
 
-body
+#content-root
   background #ececec
+  min-height 100vh
 
-body.bp3-dark
+#content-root.bp3-dark
   background #5c7080
 
 // 分隔线
@@ -19,3 +20,8 @@ span.padding-line
   padding 0 .6em
   &::after
     content '|'
+
+hr
+  border-bottom-width 0
+  border-top-width 0
+  border-bottom 1px solid $white4
