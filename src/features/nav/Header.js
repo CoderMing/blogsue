@@ -13,10 +13,10 @@ export default class extends Component {
             <Navbar.Group align="left" className="nav-content">
               <Navbar.Heading>{_config.title}</Navbar.Heading>
               <Navbar.Divider />
-              <Link to="/home">
+              <Link to="/">
                 <Button className="bp3-minimal" icon="home" text="Home" />
               </Link>
-              <Link to="/article/4">
+              <Link to="/article/1">
                 <Button className="bp3-minimal" icon="document" text="Files" />
               </Link>
               <a href="//coderming.com/resume">

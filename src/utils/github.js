@@ -6,7 +6,7 @@ const repoBaseApi = `https://api.github.com/repos/${_config.articleRepo.user}/${
   _config.articleRepo.repo
 }`
 // gh 为通用的工具，仅供拓展。一般情况下勿使用
-export const gh = new Github(_config.github.initConf)
+export const gh = new Github()
 
 export const listIssues = async conf => {
   return await axios.get(`${repoBaseApi}/issues`, conf)

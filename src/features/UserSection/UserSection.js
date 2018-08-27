@@ -25,7 +25,7 @@ export default class extends Component {
             <p className="user-desc">{description}</p>
             <hr />
             <Button
-              icon="moon"
+              icon={isDark ? 'flash' : 'moon'}
               className="bp3-fill"
               onClick={this.props.changePageColor}>
               {isDark ? '日间' : '夜间'}

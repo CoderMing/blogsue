@@ -6,6 +6,7 @@ import MainLayout from '../components/MainLayout'
 import Article from '../features/Article'
 import Gitalk from '../components/Gitalk'
 import UserSection from '../features/UserSection'
+import LinkSection from '../features/LinkSection'
 
 export default class extends React.Component {
   render() {
@@ -20,7 +21,7 @@ export default class extends React.Component {
           </SectionItem>
           <div>
             <UserSection />
-            <SectionItem>890</SectionItem>
+            <LinkSection>890</LinkSection>
           </div>
         </MainLayout>
       </div>
