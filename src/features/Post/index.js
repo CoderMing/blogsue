@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { listIssues } from '../../utils/github'
+import { Link } from 'react-router-dom'
 // import Markdown from 'react-markdown'
 // import dayjs from 'dayjs'
 
@@ -12,12 +13,14 @@ export default class extends Component {
   render() {
     const { issueList } = this.state
     return (
-      <div className="article-container">
+      <div className="post-container">
         {issueList.length &&
           issueList.map((el, index) => (
-            <div className="post-item">
-              <h3>{el.title}</h3>
-            </div>
+            <Link to={`/article/${el.number}`}>
+              <div className="post-item" key={index}>
+                <h3>{el.title}</h3>
+              </div>
+            </Link>
           ))}
       </div>
     )
