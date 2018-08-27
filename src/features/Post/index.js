@@ -16,9 +16,26 @@ export default class extends Component {
       <div className="post-container">
         {issueList.length &&
           issueList.map((el, index) => (
-            <Link to={`/article/${el.number}`}>
-              <div className="post-item" key={index}>
+            <Link to={`/article/${el.number}`} key={index}>
+              <div className="post-item">
                 <h3>{el.title}</h3>
+                作者：
+                {el.user.login}
+                <span className="padding-line" />
+                创建时间：
+                {el.created_at.substring(0, 10)}
+                <div className="item-labels">
+                  {el.labels.map((el, _index) => (
+                    <span
+                      className="label-item"
+                      // style={{
+                      //   background: `#${el.color}`
+                      // }}
+                      key={_index}>
+                      {el.name}
+                    </span>
+                  ))}
+                </div>
               </div>
             </Link>
           ))}

@@ -2,18 +2,25 @@
 
 .post-container
   .post-item
-    border-bottom 1px solid $white4
+    border-bottom 1px solid $white3
     box-sizing border-box
-    padding 30px
+    padding 35px 30px
     margin 0 20px
+    transition background .3s ease
     &:hover
-      background-color $white2
+      background $white2
       cursor pointer
-
+    .item-labels
+      margin 5px 0
+      .label-item
+        padding 2.5px 8px
+        border-radius 4px
+        background $white4
+  a:hover
+    text-decoration none
+    
 .bp3-dark
-  .con-info .info
-    color $white5
-  .markdown-body
-    color $white4
-    pre 
-      background-color $gray1
+  .post-item
+    border-bottom 1px solid $bg2
+    &:hover
+      background $bg2

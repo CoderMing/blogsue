@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
-import { Navbar, Button, Icon } from '@blueprintjs/core'
+import { Icon } from '@blueprintjs/core'
 import SectionItem from '../../components/SectionItem'
 import { getUser } from '../../utils/github'
 

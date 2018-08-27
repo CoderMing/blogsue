@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import { Navbar, Button } from '@blueprintjs/core'
+import { Button } from '@blueprintjs/core'
 import SectionItem from '../../components/SectionItem'
 import { getUser } from '../../utils/github'
 
@@ -13,15 +13,17 @@ export default class extends Component {
     userInfo: {}
   }
   render() {
-    const { avatar_url, name, followers_url } = this.props.userInfo
+    const { avatar_url, name, login } = this.props.userInfo
     const { isDark } = this.props
     const { description } = _config
     return (
       <SectionItem>
-        {name && (
+        {avatar_url && (
           <div className="user-sec-container">
-            <img className="user-avator" alt="avator" src={avatar_url} />
-            <h2 className="user-name">{name}</h2>
+            <Link to="/">
+              <img className="user-avator" alt="avator" src={avatar_url} />
+            </Link>
+            <h2 className="user-name">{name || login}</h2>
             <p className="user-desc">{description}</p>
             <Button
               icon={isDark ? 'flash' : 'moon'}
@@ -40,7 +42,7 @@ export default class extends Component {
   }
 
   async componentWillMount() {
-    console.log(_config.pageConfApi.get().colorMode)
+    console.log(await getUser(_config.articleRepo.user))
     this.props.changePageColor(_config.pageConfApi.get().colorMode)
     let userInfo = (await getUser(_config.articleRepo.user)).data
     this.setState({
