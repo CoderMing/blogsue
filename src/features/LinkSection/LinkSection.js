@@ -33,7 +33,7 @@ export default class extends Component {
   }
 
   async componentWillMount() {
-    let userInfo = (await getUser(_config.articleRepo.user)).data
+    let userInfo = (await getUser(_config.user)).data
     this.setState({
       userInfo
     })

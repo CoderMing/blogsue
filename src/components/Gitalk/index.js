@@ -11,9 +11,16 @@ export default class extends Component {
   }
 
   componentDidMount() {
+    const { user, repo, clientID, clientSecret } = _config
     const gitalk = new Gitalk({
+      labels: [],
+      ..._config.gitalk,
       number: +this.props.id,
-      ..._config.gitalk
+      owner: user,
+      repo,
+      clientID,
+      clientSecret,
+      admin: [user]
     })
 
     gitalk.render('gitalk-container')

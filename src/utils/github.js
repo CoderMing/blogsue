@@ -2,11 +2,11 @@ import Github from 'github-api'
 import axios from 'axios'
 import _config from '../config'
 
-const repoBaseApi = `https://api.github.com/repos/${_config.articleRepo.user}/${
-  _config.articleRepo.repo
+const repoBaseApi = `https://api.github.com/repos/${_config.user}/${
+  _config.repo
 }`
 
-const { clientID, clientSecret } = _config.gitalk
+const { clientID, clientSecret } = _config
 const params = {
   client_id: clientID,
   client_secret: clientSecret,
