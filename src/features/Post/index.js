@@ -18,12 +18,21 @@ export default class extends Component {
           issueList.map((el, index) => (
             <Link to={`/article/${el.number}`} key={index}>
               <div className="post-item">
-                <h3>{el.title}</h3>
-                作者：
-                {el.user.login}
-                <span className="padding-line" />
-                创建时间：
-                {el.created_at.substring(0, 10)}
+                <h3>
+                  <big>{el.title}</big>
+                </h3>
+                <div className="item-body">
+                  {el.body.length > 200
+                    ? el.body.substring(0, 200) + '...'
+                    : el.body}
+                </div>
+                <div className="item-info">
+                  作者：
+                  {el.user.login}
+                  <span className="padding-line" />
+                  创建时间：
+                  {el.created_at.substring(0, 10)}
+                </div>
                 <div className="item-labels">
                   {el.labels.map((el, _index) => (
                     <span
@@ -32,7 +41,7 @@ export default class extends Component {
                       //   background: `#${el.color}`
                       // }}
                       key={_index}>
-                      {el.name}
+                      #{el.name}
                     </span>
                   ))}
                 </div>

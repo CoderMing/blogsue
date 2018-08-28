@@ -13,6 +13,8 @@ export default class extends Component {
     userInfo: {}
   }
   render() {
+    this.props.changePageColor(_config.pageConfApi.get().colorMode)
+
     const { avatar_url, name, login } = this.props.userInfo
     const { isDark } = this.props
     const { description } = _config
@@ -42,8 +44,6 @@ export default class extends Component {
   }
 
   async componentWillMount() {
-    console.log(await getUser(_config.articleRepo.user))
-    this.props.changePageColor(_config.pageConfApi.get().colorMode)
     let userInfo = (await getUser(_config.articleRepo.user)).data
     this.setState({
       userInfo

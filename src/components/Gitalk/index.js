@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import Gitalk from 'gitalk'
-import _config from '../config'
+import _config from '../../config'
 
 import 'gitalk/dist/gitalk.css'
+import './gitalk.styl'
 
 export default class extends Component {
   render() {
