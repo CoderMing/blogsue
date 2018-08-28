@@ -13,7 +13,6 @@ export default class extends React.Component {
     const issueId = this.props.match.params.id
     return (
       <div>
-        <Nav className="bp3-dark" />
         <MainLayout>
           <SectionItem>
             <Article id={issueId} />

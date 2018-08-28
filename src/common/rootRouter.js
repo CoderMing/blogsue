@@ -1,6 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { connect } from 'react-redux'
+import Nav from '../features/Nav'
 // import Header from '../features/nav'
 // import Gitalk from '../features/gitalk/Gitalk'
 // import Article from '../features/article/Article'
@@ -21,6 +22,7 @@ export default connect(state => {
       return (
         <Router>
           <div className={isDark ? 'bp3-dark' : ''} id="content-root">
+            <Nav />
             <Route exact path="/" component={homeRoute} />
             <Route path="/post/:page" component={homeRoute} />
             <Route path="/article/:id" component={articleRoute} />
