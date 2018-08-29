@@ -1,15 +1,15 @@
 import React from 'react'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter, HashRouter, Route } from 'react-router-dom'
 import { connect } from 'react-redux'
 import Nav from '../features/Nav'
-// import Header from '../features/nav'
-// import Gitalk from '../features/gitalk/Gitalk'
-// import Article from '../features/article/Article'
-// import { Button } from '@blueprintjs/core'
 import homeRoute from '../routes/home'
 import articleRoute from '../routes/article'
 
 import './global.styl'
+
+const Router = process.env.ROUTE_MODE !== 'hash' ? BrowserRouter : HashRouter
+
+console.log(process.env)
 
 export default connect(state => {
   return {

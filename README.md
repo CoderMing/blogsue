@@ -18,3 +18,4 @@
 - Docker构建
 - config-example填写
 - README填写
+- 实现hash和browser路由适配（8.29完成

@@ -67,6 +67,7 @@
     "commitmsg": "commitlint -E GIT_PARAMS",
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
+    "build:hash": "npm run build -- hash",
     "test": "echo 'node scripts/test.js --env=jsdom'"
   },
   "jest": {
