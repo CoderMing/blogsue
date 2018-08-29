@@ -2,9 +2,7 @@ import Github from 'github-api'
 import axios from 'axios'
 import _config from '../config'
 
-const repoBaseApi = `https://api.github.com/repos/${_config.user}/${
-  _config.repo
-}`
+const repoBaseApi = `https://api.github.com/repos/${_config.user}/${_config.repo}`
 
 const { clientID, clientSecret } = _config
 const params = {

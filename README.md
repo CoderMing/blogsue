@@ -12,3 +12,9 @@
 - 打开时出现loading动画而不是展示一个一个加载组件
 - 网页二维码（8.29完成
 - 传入非法参数拦截并跳转404
+- **做代码测试**
+- 处理package.json，分清dev和prod
+- **界面切换动画**
+- Docker构建
+- config-example填写
+- README填写
