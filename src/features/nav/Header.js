@@ -21,19 +21,12 @@ export default class extends Component {
                 <Button className="bp3-minimal" icon="document" text="Files" />
               </Link>
               <a href="//coderming.com/resume">
-                <Button
-                  className="bp3-minimal"
-                  icon="widget-header"
-                  text="Resume"
-                />
+                <Button className="bp3-minimal" icon="widget-header" text="Resume" />
               </a>
             </Navbar.Group>
             <Navbar.Group align="right" className="nav-content">
               <Navbar.Heading>
-                <Button
-                  className="bp3-minimal qr-button"
-                  rightIcon="caret-down"
-                  text="本页二维码">
+                <Button className="bp3-minimal qr-button" rightIcon="caret-down" text="本页二维码">
                   <QRCode
                     className="url-qr"
                     value={window.location.href}

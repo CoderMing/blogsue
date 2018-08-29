@@ -24,9 +24,7 @@ export default class extends Component {
                   <big>{el.title}</big>
                 </h3>
                 <div className="item-body">
-                  {el.body.length > 200
-                    ? el.body.substring(0, 200) + '...'
-                    : el.body}
+                  {el.body.length > 200 ? el.body.substring(0, 200) + '...' : el.body}
                 </div>
                 <div className="item-info">
                   作者：
@@ -51,20 +49,16 @@ export default class extends Component {
             </Link>
           ))}
         <div className="post-changer">
-          <Link to={this.props.page} className="changer-left">
-            <Button
-              type="button"
-              className="bp3-minimal bp3-large"
-              icon="chevron-left">
-              前一页
-            </Button>
-          </Link>
+          {this.state.page > 1 && (
+            <Link to={`/post/${this.state.page - 1}`} className="changer-left">
+              <Button type="button" className="bp3-minimal bp3-large" icon="chevron-left">
+                前一页
+              </Button>
+            </Link>
+          )}
           {!!this.state.nextPageLength && (
-            <Link to={this.props.page} className="changer-right">
-              <Button
-                type="button"
-                className="bp3-minimal bp3-large"
-                rightIcon="chevron-right">
+            <Link to={`/post/${this.state.page + 1}`} className="changer-right">
+              <Button type="button" className="bp3-minimal bp3-large" rightIcon="chevron-right">
                 后一页
               </Button>
             </Link>
@@ -73,14 +67,28 @@ export default class extends Component {
       </div>
     )
   }
+  async updateComponent(props) {
+    console.log(props.page)
+    this.setState(
+      {
+        page: +props.page
+      },
+      async () => {
+        this.setState({
+          issueList: (await listIssues({ page: this.state.page })).data
+        })
+        // 分开运行，避免页面阻塞
+        this.setState({
+          nextPageLength: (await listIssues({ page: this.state.page + 1 })).data.length
+        })
+      }
+    )
+  }
   async componentWillMount() {
-    this.setState({
-      issueList: (await listIssues({ page: this.props.page })).data
-    })
-    // 分开运行，避免页面阻塞
-    this.setState({
-      nextPageLength: (await listIssues({ page: this.props.page + 1 })).data
-        .length
-    })
+    await this.updateComponent.call(this, this.props)
+  }
+
+  async componentWillReceiveProps(props) {
+    await this.updateComponent.call(this, props)
   }
 }
