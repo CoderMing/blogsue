@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { listIssues } from '../../utils/github'
 import { Link } from 'react-router-dom'
+import { Button } from '@blueprintjs/core'
 // import Markdown from 'react-markdown'
 // import dayjs from 'dayjs'
 
@@ -8,7 +9,8 @@ import './post.styl'
 
 export default class extends Component {
   state = {
-    issueList: {}
+    issueList: {},
+    nextPageLength: 0
   }
   render() {
     const { issueList } = this.state
@@ -48,12 +50,37 @@ export default class extends Component {
               </div>
             </Link>
           ))}
+        <div className="post-changer">
+          <Link to={this.props.page} className="changer-left">
+            <Button
+              type="button"
+              className="bp3-minimal bp3-large"
+              icon="chevron-left">
+              前一页
+            </Button>
+          </Link>
+          {!!this.state.nextPageLength && (
+            <Link to={this.props.page} className="changer-right">
+              <Button
+                type="button"
+                className="bp3-minimal bp3-large"
+                rightIcon="chevron-right">
+                后一页
+              </Button>
+            </Link>
+          )}
+        </div>
       </div>
     )
   }
   async componentWillMount() {
     this.setState({
       issueList: (await listIssues({ page: this.props.page })).data
+    })
+    // 分开运行，避免页面阻塞
+    this.setState({
+      nextPageLength: (await listIssues({ page: this.props.page + 1 })).data
+        .length
     })
   }
 }
