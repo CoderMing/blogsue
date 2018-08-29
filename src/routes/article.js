@@ -1,6 +1,5 @@
 import React from 'react'
 
-import Nav from '../features/Nav'
 import SectionItem from '../components/SectionItem'
 import MainLayout from '../components/MainLayout'
 import Article from '../features/Article'
