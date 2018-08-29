@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { Navbar, Button } from '@blueprintjs/core'
+import QRCode from 'qrcode.react'
 
 import _config from '../../config'
 
@@ -29,7 +30,18 @@ export default class extends Component {
             </Navbar.Group>
             <Navbar.Group align="right" className="nav-content">
               <Navbar.Heading>
-                <span>{_config.description}</span>
+                <Button
+                  className="bp3-minimal qr-button"
+                  rightIcon="caret-down"
+                  text="本页二维码">
+                  <QRCode
+                    className="url-qr"
+                    value={window.location.href}
+                    bgColor="transparent"
+                    level="M"
+                    size={200}
+                  />
+                </Button>
               </Navbar.Heading>
             </Navbar.Group>
           </div>
