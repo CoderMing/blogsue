@@ -15,7 +15,7 @@
 - **做代码测试**
 - 处理package.json，分清dev和prod
 - **界面切换动画**
-- Docker构建
+- Docker构建（8.30完成
 - config-example填写
 - README填写
 - 实现hash和browser路由适配（8.29完成
