@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter, HashRouter, Route } from 'react-router-dom'
 import { connect } from 'react-redux'
-import Nav from '../features/Nav'
+import Nav from '../features/Nav/index'
 import homeRoute from '../routes/home'
 import articleRoute from '../routes/article'
 

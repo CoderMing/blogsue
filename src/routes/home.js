@@ -1,10 +1,10 @@
 import React from 'react'
 
-import SectionItem from '../components/SectionItem'
-import MainLayout from '../components/MainLayout'
-import UserSection from '../features/UserSection'
-import LinkSection from '../features/LinkSection'
-import Post from '../features/Post'
+import SectionItem from '../components/SectionItem/index'
+import MainLayout from '../components/MainLayout/index'
+import UserSection from '../features/UserSection/index'
+import LinkSection from '../features/LinkSection/index'
+import Post from '../features/Post/index'
 
 export default class extends React.Component {
   render() {

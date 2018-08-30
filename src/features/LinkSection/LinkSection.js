@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Icon } from '@blueprintjs/core'
-import SectionItem from '../../components/SectionItem'
+import SectionItem from '../../components/SectionItem/index'
 import { getUser } from '../../utils/github'
 
 import './linkSection.styl'
