@@ -1,6 +1,6 @@
 import Github from 'github-api'
 import axios from 'axios'
-import _config from '../config'
+import _config from '../config/index'
 
 const repoBaseApi = `https://api.github.com/repos/${_config.user}/${_config.repo}`
 

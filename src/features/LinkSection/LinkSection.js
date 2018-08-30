@@ -5,7 +5,7 @@ import { getUser } from '../../utils/github'
 
 import './linkSection.styl'
 
-import _config from '../../config'
+import _config from '../../config/index'
 
 export default class extends Component {
   state = {
