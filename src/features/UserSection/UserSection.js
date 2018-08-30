@@ -29,7 +29,10 @@ export default class extends Component {
             <Button
               icon={isDark ? 'flash' : 'moon'}
               className="bp3-fill"
-              onClick={this.props.changePageColor.bind(this, !_config.pageConfApi.get().colorMode)}>
+              onClick={this.props.changePageColor.bind(
+                this,
+                !_config.pageConfApi.get().isDarkMode
+              )}>
               {isDark ? '日间' : '夜间'}
               模式
             </Button>
@@ -46,7 +49,7 @@ export default class extends Component {
   }
 
   async componentWillMount() {
-    this.props.changePageColor(_config.pageConfApi.get().colorMode)
+    this.props.changePageColor(_config.pageConfApi.get().isDarkMode)
     let userInfo = (await getUser(_config.user)).data
     this.setState({
       userInfo

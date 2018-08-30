@@ -7,9 +7,9 @@ import _config from '../../config'
 function updateUserInfo(info) {
   return { type: 'UPDATE_USER_INFO', info }
 }
-function changePageColor(colorMode) {
-  _config.pageConfApi.set({ colorMode: colorMode })
-  return { type: 'CHANGE_PAGE_COLOR', colorMode }
+function changePageColor(isDarkMode) {
+  _config.pageConfApi.set({ isDarkMode: isDarkMode })
+  return { type: 'CHANGE_PAGE_COLOR', isDarkMode }
 }
 
 function mapStateToProps(state) {
