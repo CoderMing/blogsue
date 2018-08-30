@@ -12,23 +12,27 @@ export default class extends Component {
     userInfo: {}
   }
   render() {
-    const { linkSection } = _config
+    const { linkSections } = _config
     return (
-      <SectionItem>
-        <div className="link-sec">
-          <h3>{linkSection.title}</h3>
-          {linkSection.linkList.map((el, index) => {
-            return (
-              <div className="link-sec-item" key={index}>
-                <Icon icon="link" />
-                <a target="_blank" href={el.href}>
-                  {el.name}
-                </a>
-              </div>
-            )
-          })}
-        </div>
-      </SectionItem>
+      <div>
+        {linkSections.map((el, index) => (
+          <SectionItem>
+            <div className="link-sec">
+              <h3>{el.title}</h3>
+              {el.linkList.map((el, index) => {
+                return (
+                  <div className="link-sec-item" key={index}>
+                    <Icon icon="link" />
+                    <a target="_blank" href={el.href}>
+                      {el.name}
+                    </a>
+                  </div>
+                )
+              })}
+            </div>
+          </SectionItem>
+        ))}
+      </div>
     )
   }
 
