@@ -12,7 +12,9 @@ export default class extends Component {
         <Navbar>
           <div id="nav-content">
             <Navbar.Group align="left" className="nav-content">
-              <Navbar.Heading>{_config.title}</Navbar.Heading>
+              <Navbar.Heading>
+                <a href={_config.homePage}>{_config.title}</a>
+              </Navbar.Heading>
               <Navbar.Divider />
               <Link to="/">
                 <Button className="bp3-minimal" icon="home" text="Home" />

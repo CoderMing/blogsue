@@ -10,8 +10,7 @@ import _config from '../../config'
 
 export default class extends Component {
   state = {
-    userInfo: {},
-    isShowQr: true
+    userInfo: {}
   }
   render() {
     const { avatar_url, name, login } = this.props.userInfo
@@ -40,12 +39,6 @@ export default class extends Component {
         )}
       </SectionItem>
     )
-  }
-
-  toggleQr() {
-    this.setState({
-      isShowQr: !this.state.isShowQr
-    })
   }
 
   async componentWillMount() {
