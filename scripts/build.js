@@ -3,7 +3,7 @@ process.env.BABEL_ENV = 'production'
 process.env.NODE_ENV = 'production'
 process.env.GENERATE_SOURCEMAP = 'false'
 process.env.ROUTE_MODE = process.argv[2] === 'hash' ? 'hash' : 'browser'
-console.log(process.env.ROUTE_MODE)
+console.log(`已采用${process.env.ROUTE_MODE}路由模式`)
 // Makes the script crash on unhandled rejections instead of silently
 // ignoring them. In the future, promise rejections that are not handled will
 // terminate the Node.js process with a non-zero exit code.
