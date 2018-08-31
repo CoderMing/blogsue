@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Icon } from '@blueprintjs/core'
 import SectionItem from '../../components/SectionItem'
 import { getUser } from '../../utils/github'
+import BlankSection from './BlankSection.jsx'
 
 import './linkSection.styl'
 
@@ -32,6 +33,7 @@ export default class extends Component {
             </div>
           </SectionItem>
         ))}
+        <BlankSection />
       </div>
     )
   }

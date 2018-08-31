@@ -1,4 +1,4 @@
-import Component from './LinkSection'
+import Component from './LinkSection.jsx'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 

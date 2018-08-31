@@ -7,6 +7,7 @@ import _config from '../../config'
 
 export default class extends Component {
   render() {
+    const { navItem } = _config
     return (
       <div id="header-container">
         <Navbar>
@@ -19,12 +20,12 @@ export default class extends Component {
               <Link to="/">
                 <Button className="bp3-minimal" icon="home" text="Home" />
               </Link>
-              <Link to="/article/1">
-                <Button className="bp3-minimal" icon="document" text="Files" />
-              </Link>
-              <a href="//coderming.com/resume">
-                <Button className="bp3-minimal" icon="widget-header" text="Resume" />
-              </a>
+              {navItem &&
+                navItem.map((el, index) => (
+                  <a href={el.url} key={index}>
+                    <Button className="bp3-minimal" icon={el.icon} text={el.name} />
+                  </a>
+                ))}
             </Navbar.Group>
             <Navbar.Group align="right" className="nav-content">
               <Navbar.Heading>
