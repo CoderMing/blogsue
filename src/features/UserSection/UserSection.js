@@ -16,6 +16,7 @@ export default class extends Component {
     const { avatar_url, name, login } = this.props.userInfo
     const { isDark } = this.props
     const { description } = _config
+
     return (
       <SectionItem>
         {avatar_url && (

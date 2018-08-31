@@ -1,7 +1,6 @@
 import React from 'react'
 
 import Header from '../features/nav'
-import Gitalk from '../features/gitalk/Gitalk'
 import SectionLeft from '../features/sectionLeft'
 import SectionRight from '../features/sectionRight'
 
