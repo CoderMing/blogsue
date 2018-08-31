@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { Button } from '@blueprintjs/core'
-import SectionItem from '../../components/SectionItem/index'
+import SectionItem from '../../components/SectionItem'
 import { getUser } from '../../utils/github'
 
 import './userSection.styl'
 
-import _config from '../../config/index'
+import _config from '../../config'
 
 export default class extends Component {
   state = {
