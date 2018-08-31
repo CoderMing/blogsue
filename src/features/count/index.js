@@ -1,6 +1,6 @@
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import Count from './Count'
+import Count from './Count.jsx'
 
 function plusOne() {
   return { type: 'PLUS' }
