@@ -1,11 +1,11 @@
 import React from 'react'
 
-import SectionItem from '../components/SectionItem/index'
-import MainLayout from '../components/MainLayout/index'
-import Article from '../features/Article/index'
-import Gitalk from '../components/Gitalk/index'
-import UserSection from '../features/UserSection/index'
-import LinkSection from '../features/LinkSection/index'
+import SectionItem from '../components/SectionItem'
+import MainLayout from '../components/MainLayout'
+import Article from '../features/Article'
+import Gitalk from '../components/Gitalk'
+import UserSection from '../features/UserSection'
+import LinkSection from '../features/LinkSection'
 
 export default class extends React.Component {
   render() {

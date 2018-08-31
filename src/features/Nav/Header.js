@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { Navbar, Button } from '@blueprintjs/core'
 import QRCode from 'qrcode.react'
 
-import _config from '../../config/index'
+import _config from '../../config'
 
 export default class extends Component {
   render() {

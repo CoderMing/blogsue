@@ -2,7 +2,7 @@ import Component from './UserSection'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
-import _config from '../../config/index'
+import _config from '../../config'
 
 function updateUserInfo(info) {
   return { type: 'UPDATE_USER_INFO', info }

@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import { Icon } from '@blueprintjs/core'
-import SectionItem from '../../components/SectionItem/index'
+import SectionItem from '../../components/SectionItem'
 import { getUser } from '../../utils/github'
 
 import './linkSection.styl'
 
-import _config from '../../config/index'
+import _config from '../../config'
 
 export default class extends Component {
   state = {
