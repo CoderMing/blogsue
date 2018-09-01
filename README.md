@@ -22,3 +22,6 @@
 - Article页面前后文章的跳转
 - 引入各大平台的分享btn
 - **标签云**
+
+## 待修复的BUG
+- Chrome下禁止使用cookie后，调用localstorage的函数会报错（但是其仍然存在于BOM

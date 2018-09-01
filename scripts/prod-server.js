@@ -5,6 +5,9 @@ const app = new express()
 
 app.use('/static', express.static(path.resolve(__dirname, '../', 'build/', 'static/')))
 
+app.use('/service-worker.js', (req, res) => {
+  res.status(200).sendFile(path.resolve(__dirname, '../', 'service-worker.js'))
+})
 app.use('/', (req, res) => {
   res.status(200).sendFile(path.resolve(__dirname, '../', 'build/', 'index.html'))
 })
