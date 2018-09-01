@@ -11,12 +11,12 @@ export default class extends Component {
   render() {
     const { blankSections } = _config
     return (
-      <div className="blank-sec">
+      <footer className="blank-sec">
         {blankSections &&
           blankSections.map((el, index) => (
             <p key={index} dangerouslySetInnerHTML={{ __html: el }} />
           ))}
-      </div>
+      </footer>
     )
   }
 }

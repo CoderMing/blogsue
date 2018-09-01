@@ -16,11 +16,21 @@
   
 .content-left
   width 620px
+  padding-right 320px
   flex-grow 1
   flex-shrink 1
   
 .content-right
+  display block
+  position fixed
+  right 50%
+  top 70px
+  margin-right -600px
   flex-grow 0
   flex-shrink 0
   width 300px
-  margin-left 20px
+
+@media screen and (max-width 1240px)
+  .content-right
+    right 20px
+    margin-right 0
