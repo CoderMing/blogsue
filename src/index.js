@@ -5,8 +5,11 @@ import registerServiceWorker from './common/registerServiceWorker'
 import configureStore from './common/configureStore'
 import reducer from './reducers'
 import RootRouter from './common/rootRouter'
+import { title, titleSuffix } from './config'
 
 const store = configureStore(reducer)
+
+window.document.title = title ? `${title} - ${titleSuffix}` : window.document.title
 
 ReactDOM.render(
   <Provider store={store}>
