@@ -40,3 +40,9 @@ export const getUser = async id => {
     params
   })
 }
+
+export const listLabels = async conf => {
+  return await axios.get(`${repoBaseApi}/labels`, {
+    params: { ...params, ...conf }
+  })
+}

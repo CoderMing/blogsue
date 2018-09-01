@@ -3,6 +3,7 @@ import { Icon } from '@blueprintjs/core'
 import SectionItem from '../../components/SectionItem'
 import { getUser } from '../../utils/github'
 import BlankSection from './BlankSection.jsx'
+import LabelSection from './LabelSection.jsx'
 
 import './linkSection.styl'
 
@@ -16,6 +17,7 @@ export default class extends Component {
     const { linkSections } = _config
     return (
       <div>
+        <LabelSection />
         {linkSections.map((el, index) => (
           <SectionItem key={index}>
             <div className="link-sec">
