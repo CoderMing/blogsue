@@ -19,4 +19,4 @@ ReactDOM.render(
   document.getElementById('root')
 )
 
-registerServiceWorker()
+if (_config.isUseServiceWorker) registerServiceWorker()
