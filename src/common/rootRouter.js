@@ -7,7 +7,7 @@ import articleRoute from '../routes/article'
 import Footer from '../features/Footer'
 import './global.styl'
 
-const Router = process.env.ROUTE_MODE !== 'hash' ? BrowserRouter : HashRouter
+const Router = process.env.ROUTE_MODE === 'hash' ? HashRouter : BrowserRouter
 
 export default connect(state => {
   return {

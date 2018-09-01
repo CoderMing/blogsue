@@ -10,19 +10,29 @@ const params = {
   client_secret: clientSecret,
   t: Date.now()
 }
+const userFilter = el =>
+  ['OWNER', 'COLLABORATOR', 'MEMBER'].includes(el.author_association) ||
+  _config.otherAuthors.includes(el.user.login)
 
 // gh 为通用的工具，仅供拓展。一般情况下勿使用
 export const gh = new Github()
 
 export const listIssues = async conf => {
-  return await axios.get(`${repoBaseApi}/issues`, {
-    params: { ...params, ...conf }
-  })
+  return await axios
+    .get(`${repoBaseApi}/issues`, {
+      params: { ...params, ...conf }
+    })
+    .then(res => {
+      res.data = res.data.filter(userFilter)
+      return res
+    })
 }
 
-listIssues()
 export const getIssue = async num => {
-  return await axios.get(`${repoBaseApi}/issues/${num}`, { params })
+  return await axios.get(`${repoBaseApi}/issues/${num}`, { params }).then(async res => {
+    if (userFilter(res.data)) return res
+    return Promise.reject('issue author is invaid!')
+  })
 }
 
 export const getUser = async id => {
