@@ -3,6 +3,8 @@ import { getIssue } from '../../utils/github'
 import Markdown from 'react-markdown'
 import dayjs from 'dayjs'
 
+import _config from '../../config'
+
 import './article.styl'
 
 export default class extends Component {
@@ -45,6 +47,8 @@ export default class extends Component {
           updateTime: dayjs(res.data.updated_at)
         }
       })
+      window.document.title =
+        res.data.title + (_config.titleSuffix ? ` - ${_config.titleSuffix}` : '')
     })
   }
 }

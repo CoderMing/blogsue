@@ -4,12 +4,10 @@ import { connect } from 'react-redux'
 import Nav from '../features/Nav'
 import homeRoute from '../routes/home'
 import articleRoute from '../routes/article'
-
+import Footer from '../features/Footer'
 import './global.styl'
 
 const Router = process.env.ROUTE_MODE !== 'hash' ? BrowserRouter : HashRouter
-
-console.log(process.env)
 
 export default connect(state => {
   return {
@@ -26,6 +24,7 @@ export default connect(state => {
             <Route exact path="/" component={homeRoute} />
             <Route path="/post/:page" component={homeRoute} />
             <Route path="/article/:id" component={articleRoute} />
+            <Footer />
           </div>
         </Router>
       )

@@ -68,7 +68,6 @@ export default class extends Component {
     )
   }
   async updateComponent(props) {
-    console.log(props.page)
     this.setState(
       {
         page: +props.page
