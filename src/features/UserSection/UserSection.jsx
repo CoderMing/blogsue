@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { Button } from '@blueprintjs/core'
 import SectionItem from '../../components/SectionItem'
 import { getUser } from '../../utils/github'
+import scrollAni from './scrollAni'
 
 import './userSection.styl'
 
@@ -20,7 +21,7 @@ export default class extends Component {
     return (
       <SectionItem>
         {avatar_url && (
-          <div className="user-sec-container">
+          <div className="user-sec-container" ref={scrollAni}>
             <Link to="/">
               <img className="user-avator" alt="avator" src={avatar_url} />
             </Link>

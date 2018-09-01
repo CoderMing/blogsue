@@ -9,7 +9,7 @@ export default class extends Component {
   render() {
     const { navItem } = _config
     return (
-      <div id="header-container">
+      <div id="header-container" className="bp3-dark">
         <Navbar>
           <div id="nav-content">
             <Navbar.Group align="left" className="nav-content">

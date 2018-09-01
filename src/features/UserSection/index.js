@@ -1,4 +1,4 @@
-import Component from './UserSection'
+import Component from './UserSection.jsx'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 

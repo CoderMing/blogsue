@@ -3,6 +3,10 @@ import React, { Component } from 'react'
 import './mainLayout.styl'
 
 export default class extends Component {
+  state = {
+    contentEl: {}
+  }
+
   render() {
     return (
       <div id="content">
@@ -11,4 +15,6 @@ export default class extends Component {
       </div>
     )
   }
+
+  componentDidMount() {}
 }

@@ -14,6 +14,13 @@ export default class extends Component {
   }
   render() {
     const { issueList } = this.state
+    const getShortcut = str =>
+      str.length > 200
+        ? `${str
+            .replace(/!?\[.*?\]\(.*?\)/, '[图片] ')
+            .replace(/<.+?>.*?<\/.+?>/, '')
+            .substring(0, 200)}......`
+        : str
     return (
       <div className="post-container">
         {issueList.length &&
@@ -23,9 +30,7 @@ export default class extends Component {
                 <h3>
                   <big>{el.title}</big>
                 </h3>
-                <div className="item-body">
-                  {el.body.length > 200 ? el.body.substring(0, 200) + '...' : el.body}
-                </div>
+                <div className="item-body">{getShortcut(el.body)}</div>
                 <div className="item-info">
                   作者：
                   {el.user.login}
