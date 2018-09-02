@@ -23,25 +23,21 @@ export default class extends Component {
     )
   }
 
-  componentWillReceiveProps(targetProps) {
-    const { tarStatus } = targetProps
+  hideElement(tarStatus) {
     const element = document.querySelector('#loading-cover')
-    console.log(element.className)
     if (tarStatus === true) {
       element.style.display = 'block'
     } else {
       //删掉元素 减少性能消耗
       setTimeout(() => {
         element.style.display = 'none'
-      }, 1000)
+      }, 3000)
     }
-    this.setState(
-      {
-        status: !this.state.status
-      },
-      () => {
-        console.log(element.className)
-      }
-    )
+  }
+
+  componentWillReceiveProps(targetProps) {
+    this.setState({
+      status: !this.state.status
+    })
   }
 }
