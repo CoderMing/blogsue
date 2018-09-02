@@ -3,16 +3,29 @@ import { Link } from 'react-router-dom'
 import { Navbar, Button } from '@blueprintjs/core'
 import QRCode from 'qrcode.react'
 
+import uptDownIcon from '../../assets/img/put-down.svg'
+
 import _config from '../../config'
 
 export default class extends Component {
+  state = {
+    isPullDown: false
+  }
+
   render() {
     const { navItem } = _config
+    const { isPullDown } = this.state
     return (
       <div id="header-container" className="bp3-dark">
         <Navbar>
           <div id="nav-content">
-            <Navbar.Group align="left" className="nav-content">
+            <img
+              src={uptDownIcon}
+              alt="pull-down"
+              className={`phone-pull-down ${isPullDown ? 'show-list' : ''}`}
+              onClick={this.phonePullDown}
+            />
+            <Navbar.Group align="left" className={`nav-content ${isPullDown ? 'show-list' : ''}`}>
               <Navbar.Heading>
                 <a href={_config.homePage}>{_config.title}</a>
               </Navbar.Heading>
@@ -44,5 +57,11 @@ export default class extends Component {
         </Navbar>
       </div>
     )
+  }
+
+  phonePullDown = () => {
+    this.setState({
+      isPullDown: !this.state.isPullDown
+    })
   }
 }

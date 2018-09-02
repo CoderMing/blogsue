@@ -27,9 +27,17 @@ export default class extends Component {
             </Link>
             <h2 className="user-name">{name || login}</h2>
             <p className="user-desc">{description}</p>
+            {_config.userLinks.length !== 0 &&
+              _config.userLinks.map((el, index) => (
+                <a href={el.url} key={index} className="user-link">
+                  <Button className="bp3-fill" icon={el.icon || 'link'} intent="Primary">
+                    {el.title}
+                  </Button>
+                </a>
+              ))}
             <Button
               icon={isDark ? 'flash' : 'moon'}
-              className="bp3-fill"
+              className="bp3-fill change-mode-btn"
               onClick={this.props.changePageColor.bind(
                 this,
                 !_config.pageConfApi.get().isDarkMode
