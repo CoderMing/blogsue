@@ -9,9 +9,10 @@ import './post.styl'
 
 export default class extends Component {
   state = {
-    issueList: {},
+    issueList: [],
     nextPageLength: 0
   }
+
   render() {
     const { issueList } = this.state
     const getShortcut = str =>
@@ -23,7 +24,7 @@ export default class extends Component {
         : str
     return (
       <div className="post-container">
-        {issueList.length &&
+        {issueList.length !== 0 &&
           issueList.map((el, index) => (
             <Link to={`/article/${el.number}`} key={index}>
               <div className="post-item">
@@ -40,12 +41,7 @@ export default class extends Component {
                 </div>
                 <div className="item-labels">
                   {el.labels.map((el, _index) => (
-                    <span
-                      className="label-item"
-                      // style={{
-                      //   background: `#${el.color}`
-                      // }}
-                      key={_index}>
+                    <span className="label-item" key={_index}>
                       #{el.name}
                     </span>
                   ))}
@@ -55,14 +51,20 @@ export default class extends Component {
           ))}
         <div className="post-changer">
           {this.state.page > 1 && (
-            <Link to={`/post/${this.state.page - 1}`} className="changer-left">
+            <Link
+              to={`/${this.props.label ? `label/${this.props.label}` : 'post'}/${this.state.page -
+                1}`}
+              className="changer-left">
               <Button type="button" className="bp3-minimal bp3-large" icon="chevron-left">
                 前一页
               </Button>
             </Link>
           )}
           {!!this.state.nextPageLength && (
-            <Link to={`/post/${this.state.page + 1}`} className="changer-right">
+            <Link
+              to={`/${this.props.label ? `label/${this.props.label}` : 'post'}/${this.state.page +
+                1}`}
+              className="changer-right">
               <Button type="button" className="bp3-minimal bp3-large" rightIcon="chevron-right">
                 后一页
               </Button>
@@ -74,13 +76,16 @@ export default class extends Component {
   }
 
   async updateComponent(props) {
+    if (!+props.page) window.location.pathname = '/404'
     this.setState(
       {
         page: +props.page
       },
       async () => {
+        let issueData = (await listIssues({ page: this.state.page, labels: props.label })).data
+        if (issueData.length === 0) window.location.pathname = '/404'
         this.setState({
-          issueList: (await listIssues({ page: this.state.page })).data
+          issueList: issueData
         })
         this.props.changeLoadingState(false)
         // 分开运行，避免页面阻塞
@@ -97,6 +102,9 @@ export default class extends Component {
   }
 
   async componentWillReceiveProps(props) {
-    await this.updateComponent.call(this, props)
+    if (this.props.page !== props.page) {
+      this.props.changeLoadingState(true)
+      await this.updateComponent.call(this, props)
+    }
   }
 }

@@ -17,4 +17,8 @@ export default class extends Component {
       </div>
     )
   }
+
+  componentDidMount() {
+    if (window.document.location.pathname !== '/404') window.document.location.pathname = '/404'
+  }
 }

@@ -38,20 +38,25 @@ export default class extends Component {
       </div>
     )
   }
+
   async componentWillMount() {
     this.props.changeLoadingState(true)
-    let res = await getIssue(this.props.id)
-    console.log(res)
-    this.setState({
-      issueData: {
-        ...res.data,
-        createTime: dayjs(res.data.created_at),
-        updateTime: dayjs(res.data.updated_at)
-      }
-    })
-    window.document.title =
-      res.data.title + (_config.titleSuffix ? ` - ${_config.titleSuffix}` : '')
+    try {
+      let res = await getIssue(this.props.id)
+      if (res.data.state === 'closed') window.location.pathname = '/404'
+      this.setState({
+        issueData: {
+          ...res.data,
+          createTime: dayjs(res.data.created_at),
+          updateTime: dayjs(res.data.updated_at)
+        }
+      })
+      window.document.title =
+        res.data.title + (_config.titleSuffix ? ` - ${_config.titleSuffix}` : '')
 
-    this.props.changeLoadingState(false)
+      this.props.changeLoadingState(false)
+    } catch (e) {
+      window.location.pathname = '/404'
+    }
   }
 }

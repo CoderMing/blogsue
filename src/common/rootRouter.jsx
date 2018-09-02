@@ -5,6 +5,7 @@ import Nav from '../features/Nav'
 import homeRoute from '../routes/home'
 import articleRoute from '../routes/article'
 import notFoundRoute from '../routes/notFound'
+import labelRoute from '../routes/label'
 import Footer from '../features/Footer'
 import './global.styl'
 
@@ -24,8 +25,14 @@ export default connect(state => {
             <Nav />
             <Switch>
               <Route exact path="/" component={homeRoute} />
+
+              <Route path="/label/:label/:page" component={labelRoute} />
+              <Route path="/label/:label" component={labelRoute} />
+
               <Route path="/post/:page" component={homeRoute} />
+
               <Route path="/article/:id" component={articleRoute} />
+
               <Route component={notFoundRoute} />
             </Switch>
             <Footer />

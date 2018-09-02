@@ -16,8 +16,7 @@
     line-height 1.8em
     color $color2
   .bp3-fill
-    margin-top 10px
-    margin-bottom 10px
+    margin 10px auto
 
 .bp3-dark
   .user-name
@@ -26,3 +25,9 @@
     color $white4
   .user-avator
     border-color rgba($bg4, .5)
+
+
+@media screen and (max-width 800px)
+  .bp3-fill
+    width 300px !important
+    max-width 80vw
