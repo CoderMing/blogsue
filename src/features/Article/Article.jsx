@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { getIssue } from '../../utils/github'
 import Markdown from 'react-markdown'
+import { Link } from 'react-router-dom'
 import dayjs from 'dayjs'
 
 import _config from '../../config'
@@ -12,7 +13,7 @@ export default class extends Component {
     issueData: {}
   }
   render() {
-    const { body, title, user, createTime } = this.state.issueData
+    const { body, title, user, createTime, labels } = this.state.issueData
     return (
       <div className="article-container">
         <div className="con-info">
@@ -33,6 +34,15 @@ export default class extends Component {
               分钟
             </p>
           )}
+          <p className="info">
+            {labels &&
+              labels.length !== 0 &&
+              labels.map((el, index) => (
+                <Link key={index} to={`/label/${el.name}`} className="info-label">
+                  #{el.name}
+                </Link>
+              ))}
+          </p>
         </div>
         <Markdown className="markdown-body" source={body} />
       </div>
