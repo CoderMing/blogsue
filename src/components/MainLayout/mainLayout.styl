@@ -40,3 +40,22 @@
     right 40px
     width 240px
     margin-right 0
+
+@media screen and (max-width 800px)
+  #content
+    flex-direction column 
+    padding 0
+  .content-item
+    border-radius 0px
+  .content-left
+    padding-top 50px
+    padding-right 0
+    width 100vw
+  .content-right
+    position static
+    padding 0
+    width 100vw
+    &.con-move-to-top
+      transform none !important
+      div.section-item:first-of-type
+        transform none !important
