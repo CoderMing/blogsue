@@ -27,11 +27,13 @@ export default class extends Component {
           placeholder="查找标签..."
         />
         {labelCloud.length !== 0 &&
-          labelCloud.filter(el => el.name.match(labelFilter)).map((el, index) => (
-            <Link key={index} to={`/labels/${el.name}`} className="label-sec-item">
-              #{el.name}
-            </Link>
-          ))}
+          labelCloud
+            .filter(el => el.name.toLowerCase().match(labelFilter.toLowerCase()))
+            .map((el, index) => (
+              <Link key={index} to={`/label/${el.name}`} className="label-sec-item">
+                #{el.name}
+              </Link>
+            ))}
       </SectionItem>
     )
   }

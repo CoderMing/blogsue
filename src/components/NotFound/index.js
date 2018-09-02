@@ -24,7 +24,5 @@ export default class extends Component {
   componentDidMount() {
     if (pageConfApi.get().isDarkMode === true)
       window.document.querySelector('#content-root').className = 'bp3-dark'
-
-    if (window.document.location.pathname !== '/404') window.document.location.pathname = '/404'
   }
 }
