@@ -33,7 +33,7 @@ export default connect(state => {
 
               <Route path="/article/:id" component={articleRoute} />
 
-              <Route component={notFoundRoute} />
+              <Route component={notFoundRoute} isDark={isDark} />
             </Switch>
             <Footer />
           </div>

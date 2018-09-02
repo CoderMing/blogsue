@@ -29,7 +29,7 @@ export default class extends Component {
               {body.replace(/[*`-]|\(.*?\)/g, '').length}
               <span className="padding-line" />
               预计阅读需要
-              {Math.round(body.replace(/[*`-]|\(.*?\)/g, '').length / 300)}
+              {Math.round(body.replace(/[*`-]|\(.*?\)/g, '').length / 400)}
               分钟
             </p>
           )}

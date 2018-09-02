@@ -17,7 +17,7 @@ const userFilter = el =>
 // gh 为通用的工具，仅供拓展。一般情况下勿使用
 export const gh = new Github()
 
-export const listIssues = async conf => {
+export const listIssues = async (conf = {}) => {
   return await axios
     .get(`${repoBaseApi}/issues`, {
       params: { ...params, ...conf }
@@ -41,7 +41,7 @@ export const getUser = async id => {
   })
 }
 
-export const listLabels = async conf => {
+export const listLabels = async (conf = {}) => {
   return await axios.get(`${repoBaseApi}/labels`, {
     params: { ...params, ...conf }
   })

@@ -24,6 +24,13 @@ export default class extends Component {
         : str
     return (
       <div className="post-container">
+        {this.props.label && (
+          <div className="filter-info">
+            “{this.props.label}
+            ”标签的搜索结果
+          </div>
+        )}
+        {+this.props.page > 1 && <div className="filter-info">第 {this.props.page} 页</div>}
         {issueList.length !== 0 &&
           issueList.map((el, index) => (
             <Link to={`/article/${el.number}`} key={index}>
@@ -41,7 +48,7 @@ export default class extends Component {
                 </div>
                 <div className="item-labels">
                   {el.labels.map((el, _index) => (
-                    <span className="label-item" key={_index}>
+                    <span key={_index} className="label-item">
                       #{el.name}
                     </span>
                   ))}
@@ -104,6 +111,7 @@ export default class extends Component {
   async componentWillReceiveProps(props) {
     if (this.props.page !== props.page) {
       this.props.changeLoadingState(true)
+      document.documentElement.scrollTop = 0
       await this.updateComponent.call(this, props)
     }
   }
