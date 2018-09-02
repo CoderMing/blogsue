@@ -28,8 +28,8 @@ export default class extends Component {
         />
         {labelCloud.length !== 0 &&
           labelCloud.filter(el => el.name.match(labelFilter)).map((el, index) => (
-            <Link key={index} to={`/labels/${el.name}`}>
-              <span className="label-sec-item">#{el.name}</span>
+            <Link key={index} to={`/labels/${el.name}`} className="label-sec-item">
+              #{el.name}
             </Link>
           ))}
       </SectionItem>
