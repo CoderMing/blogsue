@@ -6,8 +6,6 @@ import { listLabels } from '../../utils/github'
 
 import './labelSection.styl'
 
-import _config from '../../config'
-
 export default class extends Component {
   state = {
     userInfo: {},
