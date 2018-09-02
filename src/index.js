@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom'
 import registerServiceWorker from './common/registerServiceWorker'
 import configureStore from './common/configureStore'
 import reducer from './reducers'
-import RootRouter from './common/rootRouter'
+import RootRouter from './common/routerReducer'
 import _config from './config'
 
 const store = configureStore(reducer)

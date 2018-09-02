@@ -1,7 +1,8 @@
-import { CHANGE_PAGE_COLOR } from '../common/constant'
+import { CHANGE_PAGE_COLOR, CHANGE_LOADING_STATE } from '../common/constant'
 
 const initialState = {
-  isDark: false
+  isDark: false,
+  loadingState: true
 }
 
 export default (state = initialState, action) => {
@@ -10,6 +11,12 @@ export default (state = initialState, action) => {
       return {
         ...state,
         isDark: action.isDarkMode
+      }
+
+    case CHANGE_LOADING_STATE:
+      return {
+        ...state,
+        loadingState: action.loadingState
       }
 
     default:
