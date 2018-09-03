@@ -16,12 +16,11 @@ export default class extends Component {
   render() {
     const { issueList } = this.state
     const getShortcut = str =>
-      str.length > 200
-        ? `${str
-            .replace(/!?\[.*?\]\(.*?\)/, '[图片] ')
-            .replace(/<.+?>.*?<\/.+?>/, '')
-            .substring(0, 200)}......`
-        : str
+      `${str
+        .replace(/!\[.*?\]\(.*?\)/, '[图片] ')
+        .replace(/\[.*?\]\(.*?\)/, '[链接] ')
+        .replace(/<.+?>(.*?)<\/.+?>/, '$1')
+        .substring(0, 200)}......`
     return (
       <div className="post-container">
         {this.props.label && (
