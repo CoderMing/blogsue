@@ -18,9 +18,9 @@
 $ git clone https://github.com/CoderMing/blogsue.git
 ```
 
-然后进入`src/config/`目录，打开`index-example.js`文件。
+然后进入`src/config/`目录，新建一个`index.js`文件。
 
-此文件就是Blogsue的配置文件。里面包含很多配置项，都有详细的注释声明。
+此文件就是Blogsue的配置文件。本项目提供了一个示例文件`index-example.js`。里面包含很多配置项，都有详细的注释声明。
 
 你应该将上述申请到的 AppKey 和 AppSecret 填入此文件的 clientID 和 clientSecret 字段。
 

@@ -30,7 +30,7 @@ PC端：![ov-desktop](ASSETS/ov-desktop.png)
 
 ## 使用教程
 
-####**[请点击这里](./how-to-use.md)**
+**[请点击这里](./how-to-use.md)**
 
 
 
