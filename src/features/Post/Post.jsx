@@ -108,7 +108,7 @@ export default class extends Component {
   }
 
   async componentWillReceiveProps(props) {
-    if (this.props.page !== props.page) {
+    if (this.props.page !== props.page || this.props.label !== props.label) {
       this.props.changeLoadingState(true)
       document.documentElement.scrollTop = 0
       await this.updateComponent.call(this, props)
