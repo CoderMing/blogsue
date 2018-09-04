@@ -46,7 +46,6 @@ export default class extends Component {
 
   async componentDidMount() {
     let res = await listLabels()
-    console.log(res)
     this.setState({
       labelCloud: res.data
     })

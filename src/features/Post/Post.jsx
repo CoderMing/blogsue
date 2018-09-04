@@ -17,9 +17,9 @@ export default class extends Component {
     const { issueList } = this.state
     const getShortcut = str =>
       `${str
-        .replace(/!\[.*?\]\(.*?\)/, '[图片] ')
-        .replace(/\[.*?\]\(.*?\)/, '[链接] ')
-        .replace(/<.+?>(.*?)<\/.+?>/, '$1')
+        .replace(/!\[.*?\]\(.*?\)/g, '[图片: $1] ')
+        .replace(/\[(.*?)\]\(.*?\)/g, '[链接: $1] ')
+        .replace(/<.+?>(.*?)<\/.+?>/g, '$1')
         .substring(0, 200)}......`
     return (
       <div className="post-container">
