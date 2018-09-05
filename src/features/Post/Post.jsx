@@ -20,7 +20,7 @@ export default class extends Component {
         .replace(/!\[.*?\]\(.*?\)/g, '[图片: $1] ')
         .replace(/\[(.*?)\]\(.*?\)/g, '[链接: $1] ')
         .replace(/<.+?>(.*?)<\/.+?>/g, '$1')
-        .substring(0, 200)}......`
+        .substring(0, 150)}......`
     return (
       <div className="post-container">
         {this.props.label && (
