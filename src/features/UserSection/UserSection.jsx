@@ -18,6 +18,12 @@ export default class extends Component {
     const { isDark } = this.props
     const { description } = _config
 
+    const darkModeButtonConfig = {
+      icon: isDark ? 'flash' : 'moon',
+      className: 'bp3-fill change-mode-btn',
+      onClick: this.props.changePageColor.bind(this, !_config.pageConfApi.get().isDarkMode)
+    }
+
     return (
       <SectionItem>
         {avatar_url && (
@@ -35,13 +41,7 @@ export default class extends Component {
                   </Button>
                 </a>
               ))}
-            <Button
-              icon={isDark ? 'flash' : 'moon'}
-              className="bp3-fill change-mode-btn"
-              onClick={this.props.changePageColor.bind(
-                this,
-                !_config.pageConfApi.get().isDarkMode
-              )}>
+            <Button {...darkModeButtonConfig}>
               {isDark ? '日间' : '夜间'}
               模式
             </Button>

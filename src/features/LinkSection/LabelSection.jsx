@@ -15,17 +15,20 @@ export default class extends Component {
 
   render() {
     const { labelCloud, labelFilter } = this.state
+
+    const labelFilterConfig = {
+      className: 'label-sec-input',
+      disabled: false,
+      large: false,
+      onChange: this.filterLabels,
+      leftIcon: 'filter',
+      placeholder: '查找标签...'
+    }
+
     return (
       <SectionItem>
         <h3 className="label-sec-title">标签云</h3>
-        <InputGroup
-          className="label-sec-input"
-          disabled={false}
-          large={false}
-          onChange={this.filterLabels}
-          leftIcon="filter"
-          placeholder="查找标签..."
-        />
+        <InputGroup {...labelFilterConfig} />
         {labelCloud.length !== 0 &&
           labelCloud
             .filter(el => el.name.toLowerCase().match(labelFilter.toLowerCase()))

@@ -11,12 +11,13 @@ export default class extends React.Component {
   render() {
     const label = this.props.match.params.label || ''
     const page = this.props.match.params.page || 1
+    const postConfig = { label, page }
     return (
       <div>
         <Loading />
         <MainLayout>
           <SectionItem>
-            <Post label={label} page={page} />
+            <Post {...postConfig} />
           </SectionItem>
           <div>
             <UserSection />

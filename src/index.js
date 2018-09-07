@@ -10,7 +10,8 @@ import _config from './config'
 const store = configureStore(reducer)
 
 const { title, titleSuffix } = _config
-window.document.title = title ? `${title} - ${titleSuffix}` : window.document.title
+const { document } = window
+document.title = title ? `${title} - ${titleSuffix}` : document.title
 
 ReactDOM.render(
   <Provider store={store}>
