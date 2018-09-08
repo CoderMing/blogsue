@@ -33,7 +33,10 @@ export default class extends Component {
           labelCloud
             .filter(el => el.name.toLowerCase().match(labelFilter.toLowerCase()))
             .map((el, index) => (
-              <Link key={index} to={`/label/${el.name}`} className="label-sec-item">
+              <Link
+                key={index}
+                to={`/label/${el.name && el.name.replace('/', '_&_')}`}
+                className="label-sec-item">
                 #{el.name}
               </Link>
             ))}

@@ -25,7 +25,7 @@ export default class extends Component {
       <div className="post-container">
         {this.props.label && (
           <div className="filter-info">
-            “{this.props.label}
+            “{this.props.label.replace('_&_', '/')}
             ”标签的搜索结果
           </div>
         )}
@@ -88,7 +88,10 @@ export default class extends Component {
         page: +props.page
       },
       async () => {
-        let issueData = (await listIssues({ page: this.state.page, labels: props.label })).data
+        let issueData = (await listIssues({
+          page: this.state.page,
+          labels: props.label.replace('_&_', '/')
+        })).data
         if (issueData.length === 0) window.location.pathname = '/404'
         this.setState({
           issueList: issueData

@@ -38,7 +38,10 @@ export default class extends Component {
             {labels &&
               labels.length !== 0 &&
               labels.map((el, index) => (
-                <Link key={index} to={`/label/${el.name}`} className="info-label">
+                <Link
+                  key={index}
+                  to={`/label/${el.name && el.name.replace('/', '_&_')}`}
+                  className="info-label">
                   #{el.name}
                 </Link>
               ))}
