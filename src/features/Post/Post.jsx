@@ -25,7 +25,7 @@ export default class extends Component {
       <div className="post-container">
         {this.props.label && (
           <div className="filter-info">
-            “{this.props && this.propslabel.replace('_&_', '/')}
+            “{this.props.label && this.props.label.replace('_&_', '/')}
             ”标签的搜索结果
           </div>
         )}
