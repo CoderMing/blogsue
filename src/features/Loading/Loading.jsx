@@ -13,8 +13,8 @@ export default class extends Component {
     return (
       <div id="loading-cover" className={status ? '' : 'loading-hide'}>
         <div className="line-scale-pulse-out-rapid loading-ani">
-          {[...Array(5)].map(() => (
-            <div />
+          {[...Array(5)].map((el, index) => (
+            <div key={index} />
           ))}
         </div>
       </div>
