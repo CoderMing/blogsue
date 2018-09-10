@@ -3,7 +3,7 @@ import React from 'react'
 import NotFound from '../components/NotFound'
 
 export default () => (
-  <div>
+  <React.Fragment>
     <NotFound />
-  </div>
+  </React.Fragment>
 )

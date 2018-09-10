@@ -12,7 +12,7 @@ export default class extends React.Component {
   render() {
     const issueId = this.props.match.params.id
     return (
-      <div>
+      <React.Fragment>
         <Loading />
         <MainLayout>
           <SectionItem>
@@ -24,7 +24,7 @@ export default class extends React.Component {
             <LinkSection />
           </div>
         </MainLayout>
-      </div>
+      </React.Fragment>
     )
   }
 }

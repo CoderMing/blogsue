@@ -11,7 +11,7 @@ export default class extends React.Component {
   render() {
     const page = this.props.match.params.page || 1
     return (
-      <div>
+      <React.Fragment>
         <Loading />
         <MainLayout>
           <SectionItem>
@@ -22,7 +22,7 @@ export default class extends React.Component {
             <LinkSection />
           </div>
         </MainLayout>
-      </div>
+      </React.Fragment>
     )
   }
 }

@@ -16,7 +16,7 @@ export default class extends Component {
   render() {
     const { linkSections } = _config
     return (
-      <div>
+      <React.Fragment>
         <LabelSection />
         {linkSections.map((el, index) => (
           <SectionItem key={index}>
@@ -36,7 +36,7 @@ export default class extends Component {
           </SectionItem>
         ))}
         <BlankSection />
-      </div>
+      </React.Fragment>
     )
   }
 
