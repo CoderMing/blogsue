@@ -28,7 +28,7 @@ $ git clone https://github.com/CoderMing/blogsue.git
 
 ## 打包
 
-####一般情况
+#### 一般情况
 
 首先安装依赖 `cnpm install`。
 
@@ -47,7 +47,7 @@ $ npm run build:hash
 打包完成后文件放在`build/`文件夹中。
 
 
-####使用Docker
+#### 使用Docker
 
 本项目采用`node:slim`底包。容器暴露端口默认为8080。
 
