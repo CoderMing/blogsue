@@ -15,14 +15,7 @@ export default class extends Component {
   }
   render() {
     const { avatar_url, name, login } = this.props.userInfo
-    const { isDark } = this.props
     const { description } = _config
-
-    const darkModeButtonConfig = {
-      icon: isDark ? 'flash' : 'moon',
-      className: 'bp3-fill change-mode-btn',
-      onClick: this.props.changePageColor.bind(this, !_config.pageConfApi.get().isDarkMode)
-    }
 
     return (
       <SectionItem>
@@ -41,10 +34,6 @@ export default class extends Component {
                   </Button>
                 </a>
               ))}
-            <Button {...darkModeButtonConfig}>
-              {isDark ? '日间' : '夜间'}
-              模式
-            </Button>
           </div>
         )}
       </SectionItem>
@@ -52,7 +41,6 @@ export default class extends Component {
   }
 
   async componentWillMount() {
-    this.props.changePageColor(_config.pageConfApi.get().isDarkMode)
     let userInfo = (await getUser(_config.user)).data
     this.setState({
       userInfo

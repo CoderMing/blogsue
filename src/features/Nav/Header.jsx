@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { Navbar, Button } from '@blueprintjs/core'
 import QRCode from 'qrcode.react'
+import ChangeMode from './ConnectChangeMode'
 
 import uptDownIcon from '../../assets/img/put-down.svg'
 
@@ -51,6 +52,7 @@ export default class extends Component {
                     size={200}
                   />
                 </Button>
+                <ChangeMode className="qr-button" rightIcon="sun" text="日间模式" />
               </Navbar.Heading>
             </Navbar.Group>
           </div>
