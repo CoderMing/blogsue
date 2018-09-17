@@ -43,6 +43,7 @@ export default class extends Component {
             </Navbar.Group>
             <Navbar.Group align="right" className={`nav-content ${isPullDown ? 'show-list' : ''}`}>
               <Navbar.Heading>
+                <ChangeMode />
                 <Button
                   className="bp3-minimal qr-button mobile-hidden"
                   rightIcon="caret-down"
@@ -55,7 +56,6 @@ export default class extends Component {
                     size={200}
                   />
                 </Button>
-                <ChangeMode />
               </Navbar.Heading>
             </Navbar.Group>
           </div>
