@@ -41,9 +41,12 @@ export default class extends Component {
                   </a>
                 ))}
             </Navbar.Group>
-            <Navbar.Group align="right" className="nav-content">
+            <Navbar.Group align="right" className={`nav-content ${isPullDown ? 'show-list' : ''}`}>
               <Navbar.Heading>
-                <Button className="bp3-minimal qr-button" rightIcon="caret-down" text="本页二维码">
+                <Button
+                  className="bp3-minimal qr-button mobile-hidden"
+                  rightIcon="caret-down"
+                  text="本页二维码">
                   <QRCode
                     className="url-qr"
                     value={window.location.href}
@@ -52,7 +55,7 @@ export default class extends Component {
                     size={200}
                   />
                 </Button>
-                <ChangeMode className="qr-button" rightIcon="sun" text="日间模式" />
+                <ChangeMode />
               </Navbar.Heading>
             </Navbar.Group>
           </div>

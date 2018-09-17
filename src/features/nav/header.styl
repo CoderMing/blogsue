@@ -55,11 +55,31 @@
     height auto !important
     overflow hidden
     .bp3-align-right
+      float none !important 
+      height auto !important
+      padding 0 0 5px
+      overflow hidden
       display none !important
+      &.show-list
+        display block !important 
+      &>*
+        display block !important
+        text-align center
+        padding 5px 0
+        box-sizing border-box
+        margin 0px 20vw
+        border-bottom 1px solid $bg2
+        &:last-child
+          border-bottom none
+      .bp3-button
+        width 100%
+        background-color transparent !important
+        background-image none !important
+        box-shadow none !important
     .bp3-align-left
       float none !important 
       height 50px !important
-      padding 10px 0 5px
+      padding 10px 0 0
       overflow hidden
       display block !important
       &.show-list
@@ -71,8 +91,6 @@
         box-sizing border-box
         margin 0px 20vw
         border-bottom 1px solid $bg2
-        &:last-child
-          border-bottom none
       .bp3-navbar-divider
         display none !important
       a
