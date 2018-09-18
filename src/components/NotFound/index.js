@@ -8,8 +8,9 @@ import './sectionItem.styl'
 
 export default class extends Component {
   render() {
+    const { className } = this.props
     return (
-      <div>
+      <div className={className}>
         <div className="not-found">
           <img src={icon} alt="404" className="not-f-icon" />
           <div>页面找不到了 QAQ</div>
