@@ -1,5 +1,6 @@
 language: node_js
 nodejs:
-  - "10"
-  - "9"
-  - "8"
+  - stable
+script: 
+  - npm run test
+  - npm run build
