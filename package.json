@@ -7,6 +7,7 @@
   },
   "scripts": {
     "commitmsg": "commitlint -E GIT_PARAMS",
+    "prepush": "npm test",
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "build:hash": "npm run build -- hash",
