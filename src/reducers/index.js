@@ -16,6 +16,5 @@ function plus(state = initialState, action) {
 export default combineReducers({
   plus,
   user: userReducer,
-  page: pageReducer,
-  sample: (store = {}) => store
+  page: pageReducer
 })

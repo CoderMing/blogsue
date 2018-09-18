@@ -10,7 +10,7 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "build:hash": "npm run build -- hash",
-    "test": "echo '尚未做测试，已在项目日程中'"
+    "test": "jest --env=jsdom"
   },
   "jest": {
     "collectCoverageFrom": [
@@ -69,6 +69,8 @@
     "dayjs": "^1.7.5",
     "dotenv": "4.0.0",
     "dotenv-expand": "4.2.0",
+    "enzyme": "^3.6.0",
+    "enzyme-adapter-react-16": "^1.5.0",
     "eslint": "4.10.0",
     "eslint-config-react-app": "^2.1.0",
     "eslint-loader": "1.9.0",
@@ -85,8 +87,9 @@
     "github-markdown-css": "^2.10.0",
     "html-webpack-plugin": "2.29.0",
     "husky": "^0.14.3",
-    "jest": "^20.0.4",
+    "jest": "^23.6.0",
     "jest-cli": "^23.5.0",
+    "jsdom": "^12.0.0",
     "less": "^3.8.1",
     "less-loader": "^4.1.0",
     "markdown": "^0.5.0",
@@ -106,9 +109,11 @@
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
     "react-router-redux": "^4.0.8",
+    "react-test-renderer": "^16.5.1",
     "redux": "^4.0.0",
     "redux-logger": "^3.0.6",
     "resolve": "1.6.0",
+    "sinon": "^6.3.3",
     "style-loader": "0.19.0",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
