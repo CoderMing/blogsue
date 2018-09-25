@@ -5,7 +5,7 @@ const app = new express()
 
 app.use('/static', express.static(path.resolve(__dirname, '../', 'build/', 'static/')))
 
-app.get(/\/(service-worker\.js|favicon\.png|manifest\.json|asset-manifest\.json)$/, (req, res) => {
+app.get(/\/(service-worker\.js|favicon\.ico|manifest\.json|asset-manifest\.json)$/, (req, res) => {
   res.status(200).sendFile(path.resolve(__dirname, '../', 'build/', req.params[0]))
 })
 
