@@ -11,7 +11,7 @@ import NetEaseMusic from '../components/NetEaseMusic'
 import './global.styl'
 
 import _config from '../config'
-const { netEaseMusicID } = _config
+
 const Router = process.env.ROUTE_MODE === 'hash' ? HashRouter : BrowserRouter
 
 export default connect(state => {
@@ -21,6 +21,7 @@ export default connect(state => {
 })(
   class extends React.Component {
     render() {
+      const { netEaseMusicID } = _config
       const { isDark } = this.props
       return (
         <React.Fragment>
