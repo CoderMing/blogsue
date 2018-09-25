@@ -4,7 +4,7 @@ import './netEaseMusic.styl'
 
 export default class extends Component {
   render() {
-    const { className } = this.props
+    const { className, id } = this.props
     return (
       <div className={className}>
         <iframe
@@ -16,7 +16,7 @@ export default class extends Component {
           marginHeight="0"
           width="317"
           height="86"
-          src="//music.163.com/outchain/player?type=2&id=1711024&auto=1&height=66"
+          src={`//music.163.com/outchain/player?type=2&id=${id}&auto=0&height=66`}
         />
       </div>
     )
