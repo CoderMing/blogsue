@@ -7,8 +7,11 @@ import articleRoute from '../routes/article'
 import notFoundRoute from '../routes/notFound'
 import labelRoute from '../routes/label'
 import Footer from '../features/Footer'
+import NetEaseMusic from '../components/NetEaseMusic'
 import './global.styl'
 
+import _config from '../config'
+const { netEaseMusicID } = _config
 const Router = process.env.ROUTE_MODE === 'hash' ? HashRouter : BrowserRouter
 
 export default connect(state => {
@@ -20,24 +23,27 @@ export default connect(state => {
     render() {
       const { isDark } = this.props
       return (
-        <Router>
-          <div className={isDark ? 'bp3-dark' : ''} id="content-root">
-            <Nav />
-            <Switch>
-              <Route exact path="/" component={homeRoute} />
+        <React.Fragment>
+          {netEaseMusicID && <NetEaseMusic id={netEaseMusicID} />}
+          <Router>
+            <div className={isDark ? 'bp3-dark' : ''} id="content-root">
+              <Nav />
+              <Switch>
+                <Route exact path="/" component={homeRoute} />
 
-              <Route path="/label/:label/:page" component={labelRoute} />
-              <Route path="/label/:label" component={labelRoute} />
+                <Route path="/label/:label/:page" component={labelRoute} />
+                <Route path="/label/:label" component={labelRoute} />
 
-              <Route path="/post/:page" component={homeRoute} />
+                <Route path="/post/:page" component={homeRoute} />
 
-              <Route path="/article/:id" component={articleRoute} />
+                <Route path="/article/:id" component={articleRoute} />
 
-              <Route component={notFoundRoute} isDark={isDark} />
-            </Switch>
-            <Footer />
-          </div>
-        </Router>
+                <Route component={notFoundRoute} isDark={isDark} />
+              </Switch>
+              <Footer />
+            </div>
+          </Router>
+        </React.Fragment>
       )
     }
   }

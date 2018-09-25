@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import SectionItem from '../../components/SectionItem'
 import { Link } from 'react-router-dom'
 import { InputGroup } from '@blueprintjs/core'
@@ -6,7 +6,7 @@ import { listLabels } from '../../utils/github'
 
 import './labelSection.styl'
 
-export default class extends Component {
+export default class extends React.PureComponent {
   state = {
     userInfo: {},
     labelCloud: [],
