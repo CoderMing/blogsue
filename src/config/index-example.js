@@ -47,7 +47,11 @@ const config = {
   gitalk: {
     distractionFreeMode: false
   },
-
+  /**
+   * 顶部状态栏的链接
+   * 链接有两种属性，一种是url，一种是to
+   * 前者对应直接刷新跳转链接，后者对应react-router的Link标签链接（不会触发页面刷新，不能指向其他域名）
+   */
   navItem: [
     {
       name: 'Github',

@@ -28,18 +28,24 @@ export default class extends Component {
             />
             <Navbar.Group align="left" className={`nav-content ${isPullDown ? 'show-list' : ''}`}>
               <Navbar.Heading>
-                <a href={_config.homePage}>{_config.title}</a>
+                <Link to="/">{_config.title}</Link>
               </Navbar.Heading>
               <Navbar.Divider />
-              <Link to="/">
-                <Button className="bp3-minimal" icon="home" text="Home" />
-              </Link>
               {navItem &&
-                navItem.map((el, index) => (
-                  <a href={el.url} key={index}>
-                    <Button className="bp3-minimal" icon={el.icon} text={el.name} />
-                  </a>
-                ))}
+                navItem.map((el, index) => {
+                  if (el.url) {
+                    return (
+                      <a href={el.url} key={index}>
+                        <Button className="bp3-minimal" icon={el.icon} text={el.name} />
+                      </a>
+                    )
+                  } else
+                    return (
+                      <Link to={el.to} key={index}>
+                        <Button className="bp3-minimal" icon={el.icon} text={el.name} />
+                      </Link>
+                    )
+                })}
             </Navbar.Group>
             <Navbar.Group align="right" className={`nav-content ${isPullDown ? 'show-list' : ''}`}>
               <Navbar.Heading>
