@@ -27,10 +27,10 @@ export default class extends Component {
               {createTime.format('YYYY-MM-DD')}
               <span className="padding-line" />
               字数统计：
-              {body.replace(/[*`-]|\(.*?\)/g, '').length}
+              {body.replace(/[*`-]|\(.*?\)/gm, '').length}
               <span className="padding-line" />
               预计阅读需要
-              {Math.max(Math.round(body.replace(/[*`-]|\(.*?\)/g, '').length / 400), 1)}
+              {Math.max(Math.round(body.replace(/[*`-]|\(.*?\)/gm, '').length / 400), 1)}
               分钟
             </p>
           )}
