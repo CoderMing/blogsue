@@ -7,6 +7,8 @@ import LinkSection from '../features/LinkSection'
 import Post from '../features/Post'
 import Loading from '../features/Loading'
 
+import _config from '../config'
+
 export default class extends React.Component {
   render() {
     const page = this.props.match.params.page || 1
@@ -24,5 +26,11 @@ export default class extends React.Component {
         </MainLayout>
       </React.Fragment>
     )
+  }
+
+  componentDidMount() {
+    const { page } = { page: 1, ...this.props.match.params }
+    const { title, titleSuffix } = { titleSuffix: 'Blogsue', ..._config }
+    window.document.title = `${title}${page === 1 ? '' : ` · 第${page}页 `} - ${titleSuffix}`
   }
 }
