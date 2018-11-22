@@ -30,7 +30,7 @@ export default class extends React.Component {
     )
   }
 
-  componentDidMount() {
+  componentWillReceiveProps() {
     const { label, page } = { page: 1, ...this.props.match.params }
     const { titleSuffix } = { titleSuffix: 'Blogsue', ..._config }
     window.document.title = `标签：${label}${page === 1 ? '' : ` · 第${page}页 `} - ${titleSuffix}`
