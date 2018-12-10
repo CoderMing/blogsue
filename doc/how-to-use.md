@@ -8,7 +8,7 @@
 
 如果不需要的话，可以直接跳过这一部分。
 
-打开[这里](https://github.com/settings/developers)（Github 主页 -> Settings -> Developer settings），点击右上角“New OAuth App“，填写 Application name 为自定义 APP 名，HomePage URL 和 callback URL 均为你搭建博客所在的域名：![oauth](ASSETS/oauth.png)
+打开[这里](https://github.com/settings/developers)（Github 主页 -> Settings -> Developer settings），点击右上角“New OAuth App“，填写 Application name 为自定义 APP 名，HomePage URL 和 callback URL 均为你搭建博客所在的域名：![oauth](assets/oauth.png)
 
 然后你会获得一个 AppKey 和 AppSecret。
 
@@ -28,7 +28,7 @@ $ git clone https://github.com/CoderMing/blogsue.git
 
 ### 网易云音乐 ID 怎么找
 
-![屏幕快照 2018-12-10 下午12.11.06](./assets/屏幕快照 2018-12-10 下午 12.11.06.png)
+![](./assets/netease-music.png)
 
 ## 打包
 
