@@ -37,7 +37,12 @@ const config = {
    * 主要目的是为了方式他人恶意发issue污染博客内容
    */
   otherAuthors: [''],
-
+  /**
+   * 网易云音乐组件
+   * 打开你想要的音乐，找到其 ID（在 URL 中有），填入进去
+   * 不会自动播放，这样影响用户体验
+   */
+  netEaseMusicID: '1711024',
   /**
    * Gitalk 配置项
    * 请不要填写 owner，repo，clientID，clientSecret 字段
