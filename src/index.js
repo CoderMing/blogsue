@@ -11,7 +11,7 @@ const store = configureStore(reducer)
 
 const { title, titleSuffix } = _config
 const { document } = window
-document.title = title ? `${title} - ${titleSuffix}` : document.title
+document.title = title ? `${title + (titleSuffix ? ` - ${titleSuffix}` : '')}` : document.title
 
 ReactDOM.render(
   <Provider store={store}>
