@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { listIssues } from '../../utils/github'
 import { Link } from 'react-router-dom'
 import { Button } from '@blueprintjs/core'
+import removeMd from 'remove-markdown'
 // import Markdown from 'react-markdown'
 // import dayjs from 'dayjs'
 
@@ -15,12 +16,12 @@ export default class extends Component {
 
   render() {
     const { issueList } = this.state
-    const getShortcut = str =>
-      `${str
-        .replace(/!\[(.*?)\]\(.*?\)/g, (...args) => `[图片${args[1] ? `:${args[1]}` : ''}]`)
-        .replace(/\[(.*?)\]\(.*?\)/g, '[链接: $1] ')
-        .replace(/<.+?>(.*?)<\/.+?>/g, '$1')
-        .substring(0, 150)}......`
+    const getShortcut = str => {
+      let plainParagraphArr = removeMd(str.substring(0, 600)).split('\n')
+      plainParagraphArr.length = 2
+      let plainPostInfo = plainParagraphArr.join('\n')
+      return plainPostInfo.length < 150 ? plainPostInfo : `${plainPostInfo.substring(0, 150)}......`
+    }
     return (
       <div className="post-container">
         {this.props.label && (
@@ -37,13 +38,20 @@ export default class extends Component {
                 <h3>
                   <big>{el.title}</big>
                 </h3>
-                <div className="item-body">{getShortcut(el.body)}</div>
                 <div className="item-info">
                   作者：
                   {el.user.login}
                   <span className="padding-line" />
                   创建时间：
                   {el.created_at.substring(0, 10)}
+                  {el.comments !== 0 && (
+                    <React.Fragment>
+                      <span className="padding-line" />
+                      已有
+                      {el.comments}
+                      条讨论
+                    </React.Fragment>
+                  )}
                 </div>
                 <div className="item-labels">
                   {el.labels.map((el, _index) => (
@@ -52,6 +60,7 @@ export default class extends Component {
                     </span>
                   ))}
                 </div>
+                <div className="item-body">{getShortcut(el.body)}</div>
               </div>
             </Link>
           ))}
