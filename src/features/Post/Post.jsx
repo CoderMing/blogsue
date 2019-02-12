@@ -3,8 +3,6 @@ import { listIssues } from '../../utils/github'
 import { Link } from 'react-router-dom'
 import { Button } from '@blueprintjs/core'
 import removeMd from 'remove-markdown'
-// import Markdown from 'react-markdown'
-// import dayjs from 'dayjs'
 
 import './post.styl'
 
