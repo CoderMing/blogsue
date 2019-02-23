@@ -25,9 +25,4 @@ export default class extends Component {
   shouldComponentUpdate() {
     return false
   }
-
-  componentDidUpdate() {
-    console.log('12312312')
-  }
-  componentDidMount() {}
 }
