@@ -28,7 +28,9 @@ export default class extends Component {
             />
             <Navbar.Group align="left" className={`nav-content ${isPullDown ? 'show-list' : ''}`}>
               <Navbar.Heading>
-                <Link to="/">{_config.title}</Link>
+                <Link to="/" onClick={this.hideNav}>
+                  {_config.title}
+                </Link>
               </Navbar.Heading>
               <Navbar.Divider />
               {navItem &&
@@ -36,13 +38,23 @@ export default class extends Component {
                   if (el.url) {
                     return (
                       <a href={el.url} key={index}>
-                        <Button className="bp3-minimal" icon={el.icon} text={el.name} />
+                        <Button
+                          onClick={this.hideNav}
+                          className="bp3-minimal"
+                          icon={el.icon}
+                          text={el.name}
+                        />
                       </a>
                     )
                   } else
                     return (
                       <Link to={el.to} key={index}>
-                        <Button className="bp3-minimal" icon={el.icon} text={el.name} />
+                        <Button
+                          onClick={this.hideNav}
+                          className="bp3-minimal"
+                          icon={el.icon}
+                          text={el.name}
+                        />
                       </Link>
                     )
                 })}
@@ -73,6 +85,12 @@ export default class extends Component {
   phonePullDown = () => {
     this.setState({
       isPullDown: !this.state.isPullDown
+    })
+  }
+
+  hideNav = () => {
+    this.setState({
+      isPullDown: false
     })
   }
 }

@@ -34,8 +34,15 @@ export default class extends Component {
   }
 
   componentWillReceiveProps(targetProps) {
-    this.setState({
-      status: !this.state.status
-    })
+    this.setState(
+      {
+        status: !this.state.status
+      },
+      () => {
+        setTimeout(() => {
+          window.scroll(0, 0)
+        }, 300)
+      }
+    )
   }
 }
