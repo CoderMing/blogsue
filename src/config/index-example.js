@@ -6,10 +6,11 @@ const config = {
 
   titleSuffix: 'Blogsue',
 
+  // 界面右边，Github头像下的标语
+  // 你可以写自己的座右铭
   description: '副标题',
 
-  homePage: 'https://coderming.github.io',
-
+  // 界面右边，github头像下的链接按钮
   userLinks: [
     {
       title: 'GitHub',
@@ -25,9 +26,9 @@ const config = {
   /**
    * issue 仓库所在地
    */
-  user: 'coderming',
-
+  user: 'lifesinger',
   repo: 'blog',
+
   // 请申请一个clientID
   clientID: '',
   clientSecret: '',
@@ -40,6 +41,7 @@ const config = {
   /**
    * 网易云音乐组件
    * 打开你想要的音乐，找到其 ID（在 URL 中有），填入进去
+   * 因版权限制，许多歌都用不成，这个没有好的解决办法
    * 不会自动播放，这样影响用户体验
    */
   netEaseMusicID: '1711024',
