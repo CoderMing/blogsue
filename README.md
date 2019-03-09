@@ -1,6 +1,6 @@
 # Blogsue —— 基于 Github Issues 的博客系统
 
-[![Build Status](https://travis-ci.org/CoderMing/blogsue.svg?branch=master)](https://travis-ci.org/CoderMing/blogsue)
+<!-- [![Build Status](https://travis-ci.org/CoderMing/blogsue.svg?branch=master)](https://travis-ci.org/CoderMing/blogsue) -->
 
 本项目是基于 GitHub Issues 的博客系统，技术栈为 React 全家桶。
 
