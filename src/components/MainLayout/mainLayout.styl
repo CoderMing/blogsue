@@ -7,7 +7,6 @@
   margin 0 auto
   padding 40px
   padding-top 70px
-  overflow hidden
   display flex
   align-items flex-start
 
@@ -16,16 +15,14 @@
   
 .content-left
   width 620px
-  padding-right 340px
+  padding-right 20px
   flex-grow 1
   flex-shrink 1
   
 .content-right
   display block
-  position fixed
-  right 50%
+  position sticky
   top 70px
-  margin-right -560px
   flex-grow 0
   flex-shrink 0
   width 300px
@@ -35,7 +32,7 @@
 
 @media screen and (max-width 1240px)
   .content-left
-    padding-right 260px
+    padding-right 20px
   .content-right
     right 40px
     width 240px
