@@ -14,6 +14,7 @@ export default class extends Component {
   }
   render() {
     const { body, title, user, createTime, labels } = this.state.issueData
+
     return (
       <div className="article-container">
         <div className="con-info">
@@ -47,6 +48,7 @@ export default class extends Component {
               ))}
           </p>
         </div>
+        {/* markDown解析内容 */}
         <Markdown className="markdown-body" source={body} />
       </div>
     )
