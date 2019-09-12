@@ -1,5 +1,31 @@
 language: node_js
 nodejs:
   - stable
+env:
+  global:
+    - BASE_IMAGE=node
+notifications:
+  email:
+    on_success: never
+    on_failure: always
+
+before_install:
+  - curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+  - sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+  - sudo apt-get update
+  - sudo apt-get -y install docker-ce
 script: 
-  - npm run test
+  - chmod u+x ./scripts/install.sh
+  - ./scripts/install.sh
+  - docker build -t ${IMAGE_NAME}:latest .
+
+before_deploy:
+  - docker login -u ${DOCKER_LOGIN_USER_NAME}  -p ${DOCKER_LOGIN_PASSWORD}
+  - docker tag "${IMAGE_NAME}:latest" "${DOCKER_LOGIN_USER_NAME}/${IMAGE_NAME}:latest"
+
+deploy:
+  skip_cleanup: true
+  provider: script
+  script: docker push "${DOCKER_LOGIN_USER_NAME}/${IMAGE_NAME}:latest"
+  on:
+    branch: master

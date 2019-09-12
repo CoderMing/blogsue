@@ -54,6 +54,18 @@ $ npm run build:hash
 
 本项目采用`node:slim`底包。容器暴露端口默认为 8080。
 
+首先在 docker hub 注册一个账号，然后创建 名为 `blogsue` 的仓库
+
+你需要 fork 本项目，然后在 `travis` 界面添加以下环境变量
+
+`DOCKER_LOGIN_USER_NAME` 你的 `docker hub` 登陆名
+
+`DOCKER_LOGIN_PASSWORD` 你的 `docker hub` 登陆密码
+
+`ENV_URL` 配置文件来源URL，你可以使用 `gist`，然后发布成 `secret` 版本，请确保请求到的是原始文本，如果你使用 `gist`，则以 `raw` 开头
+
+`IMAGE_NAME` 镜像名字，默认 `blogsue`，请确保这里的名字与 上面的 `dockerhub` 仓库名 相同
+
 ## 遇到问题？
 
 你可以来本项目发 Issue。
