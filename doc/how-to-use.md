@@ -66,6 +66,52 @@ $ npm run build:hash
 
 `IMAGE_NAME` 镜像名字，默认 `blogsue`，请确保这里的名字与 上面的 `dockerhub` 仓库名 相同
 
+#### 使用 Netlify 配置自动部署
+
+使用上述的 Docker 部署存在以下问题
+
+1. 每次对于配置文件的修改都需要重新 push，且 配置文件 与 整个项目耦合严重
+2. 配置文件更新之后需要重新在服务器pull最新的Docker镜像然后重新运行
+
+基于上述问题，我们另一种部署方案是使用 `Netlify`
+
+###### 如何配置
+
+`fork` 这个仓库，然后在 [Netlify](https://app.netlify.com/) 选择右上角的 `New site from git`，确认之后，`Site settings -> Build & Deploy -> Environment` 中添加 `ENV_URL` 环境变量，值为配置文件的存放地点
+
+推荐使用 `gist`，但值需要 `Raw` 形式
+
+比如你的 `Github` 名是 `coderming` `gist id` 是 `123456789`
+
+那么 `ENV_URL` 的值为
+
+```
+https://gist.githubusercontent.com/coderming/123456789/raw/
+```
+
+构建脚本将读取这个配置文件并且将内容写入 `index.js`
+
+**注意**
+
+如果 `index.js`已存在于 `src/config`，那么 脚本 **不会** 覆盖你的文件，这也就意味着你存放在 `url` 上的内容**不会**生效
+
+`netlify` 会读取 `netlify.toml`文件，然后帮你构建发布。
+
+最后你会得到一个集成了CDN，letencrypt 的新网站。
+
+当你在 `gist` 上更新了配置文件时，你需要去 `netlify` 手动触发构建`(Deploys -> Trigger Deploy)`。
+
+尽情探索 `netlify` 的特性吧！
+
+你还可以绑定自己的域名，比如绑定 `example.org` 域名
+
+你需要为 `example.org` 添加 泛解析 `@` 的 `cname`，值为 `netlify` 为你生成的网站的域名
+
+大体下面的形式
+```
+unrufled-torvalds-270d89.netlify.com
+```
+
 ## 遇到问题？
 
 你可以来本项目发 Issue。
