@@ -19,4 +19,4 @@ RUN npm config set registry "https://registry.npm.taobao.org/" \
     
 EXPOSE 8080
 
-CMD    node scripts/prod-server.js
+CMD ["node","scripts/prod-server.js"]
