@@ -20,7 +20,8 @@ export const gh = new Github()
 export const listIssues = async (conf = {}) => {
   return await axios
     .get(`${repoBaseApi}/issues`, {
-      params: { ...params, ...conf }
+      // GitHub 官方关闭了get请求直接client_id的方式，目前暂有请求频率限制
+      // params: { ...params, ...conf }
     })
     .then(res => {
       res.data = res.data.filter(userFilter)
